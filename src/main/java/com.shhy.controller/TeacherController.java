@@ -59,20 +59,7 @@ public class TeacherController {
     /**
      * 登录检查
      */
-//    @RequestMapping(value = "/loginCheck")
-//    public ModelAndView loginCheck(Student Student, HttpSession httpSession){
-//        //将前端送入的多个字段封装为Student对象传递给service调用,返回的是数据库中的oneByStudent对象
-//        Student oneByStudent = StudentService.findOneByStudent(Student);
-//        ModelAndView modelAndView = new ModelAndView();
-//        if(oneByStudent != null){//表示从数据库得到了数据并被封装为Student对象
-//            httpSession.setAttribute("Student_SESSION",oneByStudent); //将返回的用户信息放入session对象
-//            modelAndView.setViewName("redirect:/admin");//重定向到其他页面
-//        }else{
-//            modelAndView.setViewName("redirect:/Student/login");
-//        }
-//        System.out.println("用户登录检查");
-//        return modelAndView;
-//    }
+
 
     @RequestMapping(value = "/logout")
     public String logout(HttpSession httpSession){
