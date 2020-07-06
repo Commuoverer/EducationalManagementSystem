@@ -28,7 +28,6 @@ public class TeacherController {
         List<Teacher> Students = teacherService.findAll();
         //创建一个PageInfo对象,用以封装查询到的数据,同时指定页码导航列表的数目
         PageInfo pageinfo = new PageInfo(Students,5);
-        //将PageInfo对象封装到模型中
         modelAndView.addObject("pageinfo", pageinfo);
         return modelAndView;
     }
