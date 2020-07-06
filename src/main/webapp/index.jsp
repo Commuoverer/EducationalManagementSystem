@@ -6,12 +6,13 @@
 //    可以将该对象放在session里,只需要在页面调用即可,应该在所有的允许用户直接访问的view中添加
     request.getSession().setAttribute("app",app);
 %>
+
 <html>
-<head>
-    <title>Title</title>
-</head>
 <body>
-教务管理系统
-<a href="${app}/user/login">后台管理</a>
+<h2>你的登录方式</h2>
+
+<a href="${app}/student/login">学生登录</a>
+<a href="${app}/teacher/login">教师登录</a>
+
 </body>
 </html>

@@ -5,23 +5,23 @@
 
 <mapper namespace="com.shhy.dao.StudentMapper">
     <insert id="insert" parameterType="com.shhy.domain.Student">
-       insert into user (sname,password,sex,age,grade,sdepartment,specailty) values (#{sname},#{password},#{sex},#{age},#{grade},#{sdepartment},#{specialty})
+       insert into student (sname,password,sex,age,grade,sdepartment,specailty) values (#{sname},#{password},#{sex},#{age},#{grade},#{sdepartment},#{specialty})
     </insert>
     <delete id="delete" parameterType="int">
-        delete from user where sid=#{sid}
+        delete from student where sid=#{sid}
     </delete>
     <update id="update" parameterType="com.shhy.domain.Student">
-        update user set username=#{username},password=#{password},sex=#{sex},age=#{age},grade=#{grade},sdepartment=#{sdepartment},specialty=#{specialty} where id=#{id}
+        update student set sname=#{sname},password=#{password},sex=#{sex},age=#{age},grade=#{grade},sdepartment=#{sdepartment},specialty=#{specialty} where id=#{id}
     </update>
     <select id="findOne" parameterType="int" resultType="com.shhy.domain.Student">
-        select * from user where sid=#{sid}
+        select * from student where sid=#{sid}
     </select>
     <select id="findAll" resultType="com.shhy.domain.Student">
-        select * from user
+        select * from student
     </select>
-<!--    <select id="findOneByUser" resultType="com.shhy.domain.User" parameterType="com.shhy.domain.User">-->
-<!--        select * from USER where username=#{username} and password=#{password}-->
-<!--    </select>-->
+    <select id="findOneByStudent" resultType="com.shhy.domain.Student" parameterType="com.shhy.domain.Student">
+        select * from student where sid=#{sid} and password=#{password}
+    </select>
 <!--    <select id="findOneByUsername" resultType="com.shhy.domain.User" parameterType="String">-->
 <!--        select * from USER where username=#{username}-->
 <!--    </select>-->

@@ -2,9 +2,11 @@ package com.shhy.service.impl;
 
 import com.shhy.domain.Course;
 import com.shhy.service.CourseService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class CourseServiceImpl implements CourseService {
     @Override
     public Integer insert(Course course) {
