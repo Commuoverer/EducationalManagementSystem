@@ -18,12 +18,12 @@
         select course.*,teacher.password,teacher.tname,teacher.title,teacher.tdepartment from course,teacher where  course.tid=teacher.tid and cname=#{cname}
     </select>
 
-    <resultMap id="CourseFindOneBean" type="CourseAndTeacher">
+    <resultMap id="CourseFindOneBean" type="com.shhy.domain.CourseAndTeacher">
         <id property="cid" column="cid"></id>
         <result property="cname" column="cname"></result>
         <result property="location" column="location"></result>
         <result property="ctime" column="ctime"></result>
-        <association property="teacher" javaType="Teacher">
+        <association property="teacher" javaType="com.shhy.domain.Teacher">
             <id property="tid" column="tid"></id>
             <result property="tname" column="tname"></result>
             <result property="title" column="title"></result>
@@ -35,12 +35,12 @@
     <select id="findAll" resultMap="CourseFindAllBean">
          select course.*,teacher.password,teacher.tname,teacher.title,teacher.tdepartment from course,teacher where  course.tid=teacher.tid
     </select>
-    <resultMap id="CourseFindAllBean" type="CourseAndTeacher">
+    <resultMap id="CourseFindAllBean" type="com.shhy.domain.CourseAndTeacher">
         <id property="cid" column="cid"></id>
         <result property="cname" column="cname"></result>
         <result property="location" column="location"></result>
         <result property="ctime" column="ctime"></result>
-        <association property="teacher" javaType="Teacher">
+        <association property="teacher" javaType="com.shhy.domain.Teacher">
             <id property="tid" column="tid"></id>
             <result property="tname" column="tname"></result>
             <result property="title" column="title"></result>
