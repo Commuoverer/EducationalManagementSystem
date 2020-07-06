@@ -19,7 +19,9 @@ public class TeacherController {
     public ModelAndView findall(){
         ModelAndView modelAndView =new ModelAndView("/teacher/list");
         System.out.println("teacherController实现");
+
         List<Teacher> teachers =teacherService.findAll();
+
         modelAndView.addObject("teachers",teachers);
         return modelAndView;
     }
