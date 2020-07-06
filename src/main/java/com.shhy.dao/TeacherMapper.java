@@ -11,8 +11,8 @@ import java.util.List;
 @Repository
 public interface TeacherMapper {
     Integer insert(Teacher teacher);
-    Integer delete(Integer id);
+    Integer delete(Integer tid);
     Integer update(Teacher teacher);
     List<Teacher> findAll();
-    Teacher findOne(Integer id);
+    Teacher findOne(Integer tid);
 }

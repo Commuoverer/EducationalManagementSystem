@@ -5,20 +5,53 @@
 
 <mapper namespace="com.shhy.dao.CourseMapper">
     <insert id="insert" parameterType="com.shhy.domain.Course">
-       insert into user (cname,tid,location,ctime) values (#{cname},#{tid},#{location},#{ctime})
+       insert into course (cname,tid,location,ctime) values (#{cname},#{tid},#{location},#{ctime})
     </insert>
     <delete id="delete" parameterType="int">
-        delete from user where cid=#{cid}
+        delete from course where cid=#{cid}
     </delete>
     <update id="update" parameterType="com.shhy.domain.Course">
-        update user set cname=#{cname},tid=#{tid},location=#{location},ctime=#{ctime} where cid=#{cid}
+        update course set cname=#{cname},tid=#{tid},location=#{location},ctime=#{ctime} where cid=#{cid}
     </update>
-    <select id="findOne" parameterType="int" resultType="com.shhy.domain.Course">
-        select * from user where cid=#{cid}
+
+    <select id="findOne" parameterType="String" resultMap="CourseFindOneBean">
+        select course.*,teacher.password,teacher.tname,teacher.title,teacher.tdepartment from course,teacher where  course.tid=teacher.tid and cname=#{cname}
     </select>
-    <select id="findAll" resultType="com.shhy.domain.Course">
-        select * from user
+
+    <resultMap id="CourseFindOneBean" type="CourseAndTeacher">
+        <id property="cid" column="cid"></id>
+        <result property="cname" column="cname"></result>
+        <result property="location" column="location"></result>
+        <result property="ctime" column="ctime"></result>
+        <association property="teacher" javaType="Teacher">
+            <id property="tid" column="tid"></id>
+            <result property="tname" column="tname"></result>
+            <result property="title" column="title"></result>
+            <result property="tdepartment" column="tdepartment"></result>
+            <result property="password" column="password"></result>
+        </association>
+    </resultMap>
+
+    <select id="findAll" resultMap="CourseFindAllBean">
+         select course.*,teacher.password,teacher.tname,teacher.title,teacher.tdepartment from course,teacher where  course.tid=teacher.tid
     </select>
+    <resultMap id="CourseFindAllBean" type="CourseAndTeacher">
+        <id property="cid" column="cid"></id>
+        <result property="cname" column="cname"></result>
+        <result property="location" column="location"></result>
+        <result property="ctime" column="ctime"></result>
+        <association property="teacher" javaType="Teacher">
+            <id property="tid" column="tid"></id>
+            <result property="tname" column="tname"></result>
+            <result property="title" column="title"></result>
+            <result property="tdepartment" column="tdepartment"></result>
+            <result property="password" column="password"></result>
+        </association>
+    </resultMap>
+
+
+
+
     <!--    <select id="findOneByUser" resultType="com.shhy.domain.User" parameterType="com.shhy.domain.User">-->
     <!--        select * from USER where username=#{username} and password=#{password}-->
     <!--    </select>-->

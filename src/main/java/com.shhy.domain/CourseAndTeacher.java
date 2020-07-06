@@ -1,11 +1,12 @@
 package com.shhy.domain;
 
-public class Course {
+public class CourseAndTeacher {
+
     private Integer cid;//无需输入数据库自动生成，修改功能不能修改课程号
     private String cname;
     private String location;
     private String ctime;
-    private Integer tid;
+    private Teacher teacher;
 
     public Integer getCid() {
         return cid;
@@ -23,8 +24,8 @@ public class Course {
         return ctime;
     }
 
-    public Integer getTid() {
-        return tid;
+    public Teacher getTeacher() {
+        return teacher;
     }
 
     public void setCid(Integer cid) {
@@ -43,18 +44,18 @@ public class Course {
         this.ctime = ctime;
     }
 
-    public void setTid(Integer tid) {
-        this.tid = tid;
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
     }
 
     @Override
     public String toString() {
-        return "Course{" +
+        return "CourseAndTeacher{" +
                 "cid=" + cid +
                 ", cname='" + cname + '\'' +
                 ", location='" + location + '\'' +
                 ", ctime='" + ctime + '\'' +
-                ", tid=" + tid +
+                ", teacher=" + teacher +
                 '}';
     }
 }

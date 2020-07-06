@@ -4,9 +4,10 @@ import com.shhy.dao.StudentMapper;
 import com.shhy.domain.Student;
 import com.shhy.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class StudentServiceImpl implements StudentService {
 
     @Autowired
