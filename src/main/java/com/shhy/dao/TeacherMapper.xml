@@ -19,5 +19,7 @@
     <select id="findAll" resultType="com.shhy.domain.Teacher">
         select * from teacher
     </select>
-
+    <select id="findoneByteacher" resultType="com.shhy.domain.Teacher" parameterType="com.shhy.domain.Teacher">
+        select * from teacher where tid=#{tid} and password=#{password}
+    </select>
 </mapper>

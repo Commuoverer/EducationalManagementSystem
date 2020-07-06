@@ -1,10 +1,7 @@
 package com.shhy.dao;
 
-import com.shhy.domain.Student;
 import com.shhy.domain.Teacher;
-import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
@@ -15,4 +12,5 @@ public interface TeacherMapper {
     Integer update(Teacher teacher);
     List<Teacher> findAll();
     Teacher findOne(Integer id);
+    Teacher findoneByteacher(Teacher teacher);
 }
