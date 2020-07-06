@@ -111,6 +111,6 @@ public class TeacherController {
         //httpSession.setAttribute("Student_SESSION",null);//清空用户相关的session
         httpSession.invalidate();//使session失效
         //退出登录后,将页面重新定向到login
-        return "redirect:/teacher/login";
+        return "redirect:/teacher/logout";
     }
 }
