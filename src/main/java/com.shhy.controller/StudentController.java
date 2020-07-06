@@ -3,6 +3,7 @@ package com.shhy.controller;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.shhy.domain.Student;
+import com.shhy.domain.Teacher;
 import com.shhy.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,15 +24,10 @@ public class StudentController {
 
     @RequestMapping(value = "/list",method = RequestMethod.GET)
     public ModelAndView findAll(@RequestParam(value = "page",defaultValue = "1")Integer page, @RequestParam(value = "pageSize",defaultValue = "3")Integer pageSize){
-        //使用静态方法设置初始页码数和条目数
-        PageHelper.startPage(page,pageSize);
-        ModelAndView modelAndView = new ModelAndView("/Student/list");
-        System.out.println("StudentController的工作");
-        List<Student> Students = studentService.findAll();
-        //创建一个PageInfo对象,用以封装查询到的数据,同时指定页码导航列表的数目
-        PageInfo pageinfo = new PageInfo(Students,5);
-        //将PageInfo对象封装到模型中
-        modelAndView.addObject("pageinfo", pageinfo);
+        ModelAndView modelAndView =new ModelAndView("/student/list");
+        System.out.println("StudentController实现");
+        List<Student> students =studentService.findAll();
+        modelAndView.addObject("students",students);
         return modelAndView;
     }
 
