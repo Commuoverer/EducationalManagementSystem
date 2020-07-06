@@ -16,7 +16,7 @@ public class TeacherController {
     @Autowired
     private TeacherService teacherService;
     @RequestMapping(value = "/list",method = RequestMethod.GET)
-    public ModelAndView findAll(){
+    public ModelAndView findall(){
         ModelAndView modelAndView =new ModelAndView("/teacher/list");
         System.out.println("teacherController实现");
         List<Teacher> teachers =teacherService.findAll();
