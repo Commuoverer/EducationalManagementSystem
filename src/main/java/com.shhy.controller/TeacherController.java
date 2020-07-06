@@ -16,11 +16,30 @@ public class TeacherController {
     @Autowired
     private TeacherService teacherService;
     @RequestMapping(value = "/list",method = RequestMethod.GET)
-    public ModelAndView findall(){
-        ModelAndView modelAndView =new ModelAndView("/teacher/list");
-        System.out.println("teacherController实现");
-        List<Teacher> teachers =teacherService.findAll();
-        modelAndView.addObject("teachers",teachers);
+    public ModelAndView findall(@RequestParam(value = "page",defaultValue = "1")Integer page, @RequestParam(value = "pageSize",defaultValue = "3")Integer pageSize){
+        PageHelper.startPage(page,pageSize);
+        ModelAndView modelAndView = new ModelAndView("/teacher/list");
+        System.out.println("StudentController的工作");
+        List<Teacher> Students = teacherService.findAll();
+        //创建一个PageInfo对象,用以封装查询到的数据,同时指定页码导航列表的数目
+        PageInfo pageinfo = new PageInfo(Students,5);
+        //将PageInfo对象封装到模型中
+        modelAndView.addObject("pageinfo", pageinfo);
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/insert")
+    public ModelAndView insert(Teacher teacher){
+        System.out.println(teacher);
+        Integer i = teacherService.insert(teacher);
+        ModelAndView modelAndView = new ModelAndView("redirect:list");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/delete")
+    public ModelAndView delete(@RequestParam Integer id){
+        Integer i = teacherService.delete(id);
+        ModelAndView modelAndView = new ModelAndView("redirect:list");
         return modelAndView;
     }
 
