@@ -21,7 +21,7 @@ public class TeacherController {
     @Autowired
     private TeacherService teacherService;
     @RequestMapping(value = "/list",method = RequestMethod.GET)
-    public ModelAndView findall(@RequestParam(value = "page",defaultValue = "1")Integer page, @RequestParam(value = "pageSize",defaultValue = "3")Integer pageSize){
+    public ModelAndView findAll(@RequestParam(value = "page",defaultValue = "1")Integer page, @RequestParam(value = "pageSize",defaultValue = "3")Integer pageSize){
         PageHelper.startPage(page,pageSize);
         ModelAndView modelAndView = new ModelAndView("/teacher/list");
         System.out.println("StudentController的工作");
