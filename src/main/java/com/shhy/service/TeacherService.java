@@ -11,4 +11,5 @@ public interface TeacherService {
     Integer update(Teacher teacher);//更新一条记录  update user set username=xxxx,password=xxxxx,id=xxxx where id=xxx
     List<Teacher> findAll();//查找所有记录   select * from user
     Teacher findOne(Integer id);
+    Teacher findoneByteacher(Teacher teacher);
 }

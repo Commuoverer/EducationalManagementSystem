@@ -7,11 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
+
+
 @Service
 public class StudentServiceImpl implements StudentService {
 
     @Autowired
     private StudentMapper studentMapper;
+
     @Override
     public Integer insert(Student student) {
         return studentMapper.insert(student);
@@ -35,5 +39,11 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Student findOne(Integer id) {
         return studentMapper.findOne(id);
+    }
+
+    @Override
+    public Student findOneByStudent(Student student) {
+        Student oneByStudent = studentMapper.findOneByStudent(student);
+        return oneByStudent;
     }
 }
