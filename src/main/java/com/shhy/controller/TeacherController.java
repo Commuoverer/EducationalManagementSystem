@@ -88,6 +88,7 @@ public class TeacherController {
         //将前端送入的多个字段封装为Student对象传递给service调用,返回的是数据库中的oneByStudent对象
         Teacher oneByteacher = teacherService.findoneByteacher(teacher);
         ModelAndView modelAndView = new ModelAndView();
+        System.out.println(">>>>>>>>>>>>>>>>>" + oneByteacher);
         if (oneByteacher != null) {//表示从数据库得到了数据并被封装为Student对象
             httpSession.setAttribute("STUDENT_SESSION", oneByteacher); //将返回的用户信息放入session对象
             modelAndView.setViewName("/admin");//重定向到其他页面
