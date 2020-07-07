@@ -105,12 +105,16 @@ public class StudentController {
     @RequestMapping(value = "/studentLoginCheck")
     public ModelAndView loginCheck(Student student, HttpSession httpSession) {
         //将前端送入的多个字段封装为Student对象传递给service调用,返回的是数据库中的oneByStudent对象
+
         Student oneByStudent = studentService.findOneByStudent(student);
+
         ModelAndView modelAndView = new ModelAndView();
+
         System.out.println(">>>>>>>>>>>>>>>>>" + oneByStudent);
+
         if (oneByStudent != null) {//表示从数据库得到了数据并被封装为Student对象
             httpSession.setAttribute("STUDENT_SESSION", oneByStudent); //将返回的用户信息放入session对象
-            modelAndView.setViewName("/admin");//重定向到其他页面
+            modelAndView.setViewName("redirect:/student/list");//重定向到其他页面
         } else {
             modelAndView.setViewName("redirect:/student/login");
         }

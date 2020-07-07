@@ -26,7 +26,7 @@
         <property name="user" value="root"></property>
 
         <property name="password" value="123456"></property>
-        
+
 
     </bean>
     <!-- 1.2 配置sqlSessionFactory工厂,数据源使用数据库连接池提供的数据源(通过ref引用) -->

@@ -97,15 +97,15 @@
 
 
 
-                        <form action="../index.html">
+                        <form method="post" action="${app}/student/studentLoginCheck">
                             <div class="inner-addon right-addon margin-bottom-15">
                                 <i class="fa fa-envelope"></i>
-                                <input type="text" class="form-control" placeholder="请输入用户名" />
+                                <input type="text" class="form-control" name="sid" placeholder="请输入用户名" />
                             </div>
 
                             <div class="inner-addon right-addon margin-bottom-15">
                                 <i class="fa fa-lock"></i>
-                                <input type="password" class="form-control" placeholder="请输入密码" />
+                                <input type="password" class="form-control" name="password" placeholder="请输入密码" />
                             </div>
                             <div class="row">
                                 <div class="col-md-6 text-center">
@@ -116,13 +116,10 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6 text-center">
-                                    <button type="submit">登 录</button>
+<%--                                    <button type="submit">登 录</button>--%>
                                     <button type="submit"  name="Signin" class="btn btn-green btn-raised btn-flat">登入Account</button>
                                 </div>
                             </div>
-
-
-
                         </form>
 
                     </div><!--/col-md-6-->
