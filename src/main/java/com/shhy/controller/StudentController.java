@@ -24,20 +24,17 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
     @RequestMapping(value = "/list",method = RequestMethod.GET)
-    public ModelAndView findAll(@RequestParam(value = "page",defaultValue = "1")Integer page, @RequestParam(value = "pageSize",defaultValue = "3")Integer pageSize){
+    public ModelAndView findAll(@RequestParam(value = "page",defaultValue = "1")Integer page, @RequestParam(value = "pageSize",defaultValue = "5")Integer pageSize){
         PageHelper.startPage(page,pageSize);
         ModelAndView modelAndView = new ModelAndView("/student/list");
         System.out.println("StudentController的工作");
-        List<Student> Students = studentService.findAll();
+        List<Student> students = studentService.findAll();
         //创建一个PageInfo对象,用以封装查询到的数据,同时指定页码导航列表的数目
-        PageInfo pageinfo = new PageInfo(Students,5);
+        PageInfo pageinfo = new PageInfo(students,5);
         //将PageInfo对象封装到模型中
         modelAndView.addObject("pageinfo", pageinfo);
         return modelAndView;
     }
-
-
-
 
     @RequestMapping(value = "/insert")
     public ModelAndView insert(Student Student) {
@@ -110,7 +107,7 @@ public class StudentController {
         System.out.println(">>>>>>>>>>>>>>>>>" + oneByStudent);
         if (oneByStudent != null) {//表示从数据库得到了数据并被封装为Student对象
             httpSession.setAttribute("STUDENT_SESSION", oneByStudent); //将返回的用户信息放入session对象
-            modelAndView.setViewName("/admin");//重定向到其他页面
+            modelAndView.setViewName("redirect:/student/list");//重定向到其他页面
         } else {
             modelAndView.setViewName("redirect:/student/login");
         }

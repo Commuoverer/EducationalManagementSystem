@@ -1,6 +1,5 @@
 package com.shhy.service;
 
-import com.shhy.domain.Student;
 import com.shhy.domain.Teacher;
 
 import java.util.List;

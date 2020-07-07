@@ -18,7 +18,6 @@
     </select>
     <select id="findAll" resultType="com.shhy.domain.Student">
         select * from student
-
     </select>
     <select id="findOneByStudent" resultType="com.shhy.domain.Student" parameterType="com.shhy.domain.Student">
         select * from student where sid=#{sid} and password=#{password}

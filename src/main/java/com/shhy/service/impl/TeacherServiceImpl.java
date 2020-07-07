@@ -1,7 +1,6 @@
 package com.shhy.service.impl;
 
 import com.shhy.dao.TeacherMapper;
-import com.shhy.domain.Student;
 import com.shhy.domain.Teacher;
 import com.shhy.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
