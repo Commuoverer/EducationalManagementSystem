@@ -3,7 +3,6 @@ package com.shhy.controller;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.shhy.domain.Administrator;
-import com.shhy.domain.Teacher;
 import com.shhy.service.adminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,21 +19,23 @@ import java.util.List;
 public class adminController {
     @Autowired
     private adminService adminservice;
-    @RequestMapping(value = "/list",method = RequestMethod.GET)
-    public ModelAndView findAll(@RequestParam(value = "page",defaultValue = "1")Integer page, @RequestParam(value = "pageSize",defaultValue = "3")Integer pageSize){
-        PageHelper.startPage(page,pageSize);
+
+
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public ModelAndView findAll(@RequestParam(value = "page", defaultValue = "1") Integer page, @RequestParam(value = "pageSize", defaultValue = "3") Integer pageSize) {
+        PageHelper.startPage(page, pageSize);
         ModelAndView modelAndView = new ModelAndView("/administrator/list");
         System.out.println("StudentController的工作");
         List<Administrator> administrators = adminservice.findAll();
         //创建一个PageInfo对象,用以封装查询到的数据,同时指定页码导航列表的数目
-        PageInfo pageinfo = new PageInfo(administrators,5);
+        PageInfo pageinfo = new PageInfo(administrators, 5);
         //将PageInfo对象封装到模型中
         modelAndView.addObject("pageinfo", pageinfo);
         return modelAndView;
     }
 
     @RequestMapping(value = "/insert")
-    public ModelAndView insert(Administrator administrator){
+    public ModelAndView insert(Administrator administrator) {
         System.out.println(administrator);
         Integer i = adminservice.insert(administrator);
         ModelAndView modelAndView = new ModelAndView("redirect:list");
@@ -42,14 +43,14 @@ public class adminController {
     }
 
     @RequestMapping(value = "/delete")
-    public ModelAndView delete(@RequestParam Integer id){
+    public ModelAndView delete(@RequestParam Integer id) {
         Integer i = adminservice.delete(id);
         ModelAndView modelAndView = new ModelAndView("redirect:list");
         return modelAndView;
     }
 
     @RequestMapping(value = "/update")
-    public ModelAndView update(Administrator administrator){
+    public ModelAndView update(Administrator administrator) {
         System.out.println(administrator);
         Integer i = adminservice.update(administrator);
         ModelAndView modelAndView = new ModelAndView("redirect:list");
@@ -57,18 +58,52 @@ public class adminController {
     }
 
     @RequestMapping(value = "/addForm")
-    public String toAddForm(){
+    public String toAddForm() {
         return "administrator/addForm";
     }
 
     /**
      * 使用户点击后能够跳转到登录页面
-     * */
+     */
     @RequestMapping(value = "/login")
-    public String toLogin(){
+    public String toLogin() {
         return "administrator/login";
     }
 
+    @RequestMapping(value = "/admin")
+    public String toAdmin() {
+        return "administrator/admin";
+    }
+
+    @RequestMapping(value = "/student/list")
+    public String toStudentList() {
+        return "/student/list";
+    }
+
+    @RequestMapping(value = "/student/addForm")
+    public String toStudentAdd() {
+        return "/student/addForm";
+    }
+
+    @RequestMapping(value = "/teacher/list")
+    public String toTeacherList() {
+        return "/teacher/list";
+    }
+
+    @RequestMapping(value = "/teacher/addForm")
+    public String toTeacherAdd() {
+        return "/teacher/addForm";
+    }
+
+    @RequestMapping(value = "/course/addForm")
+    public String toCourseAdd() {
+        return "/course/addForm";
+    }
+
+    @RequestMapping(value = "/course/list")
+    public String toCourseList() {
+        return "/course/list";
+    }
 //    @ResponseBody
 //    @RequestMapping(value = "/StudentExist")
 //    public String StudentExist(@RequestParam(value = "Studentname")String Studentname){
@@ -100,7 +135,7 @@ public class adminController {
     }
 
     @RequestMapping(value = "/logout")
-    public String logout(HttpSession httpSession){
+    public String logout(HttpSession httpSession) {
         //httpSession.setAttribute("Student_SESSION",null);//清空用户相关的session
         httpSession.invalidate();//使session失效
         //退出登录后,将页面重新定向到login
