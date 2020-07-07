@@ -118,8 +118,8 @@
 </div>
 <div class="wrapper">
     <div class="preview">
-        <a href="${app}/student/list" target="_blank"><img src="${app}/images/demo/admin1.png" alt="Got 学生登入" /></a>
-        <h2><a href="${app}/student/list" target="_blank">学生登入</a></h2>
+        <a href="${app}/student/login" target="_blank"><img src="${app}/images/demo/admin1.png" alt="Got 学生登入" /></a>
+        <h2><a href="${app}/student/login" target="_blank">学生登入</a></h2>
     </div>
 
     <div class="preview">
