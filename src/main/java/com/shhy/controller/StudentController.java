@@ -5,6 +5,7 @@ import com.github.pagehelper.PageInfo;
 import com.shhy.domain.Student;
 import com.shhy.domain.Teacher;
 import com.shhy.service.StudentService;
+import com.shhy.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,15 +23,21 @@ public class StudentController {
 
     @Autowired
     private StudentService studentService;
-
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public ModelAndView findAll(@RequestParam(value = "page", defaultValue = "1") Integer page, @RequestParam(value = "pageSize", defaultValue = "3") Integer pageSize) {
+    @RequestMapping(value = "/list",method = RequestMethod.GET)
+    public ModelAndView findAll(@RequestParam(value = "page",defaultValue = "1")Integer page, @RequestParam(value = "pageSize",defaultValue = "3")Integer pageSize){
+        PageHelper.startPage(page,pageSize);
         ModelAndView modelAndView = new ModelAndView("/student/list");
-        System.out.println("StudentController实现");
-        List<Student> students = studentService.findAll();
-        modelAndView.addObject("students", students);
+        System.out.println("StudentController的工作");
+        List<Student> Students = studentService.findAll();
+        //创建一个PageInfo对象,用以封装查询到的数据,同时指定页码导航列表的数目
+        PageInfo pageinfo = new PageInfo(Students,5);
+        //将PageInfo对象封装到模型中
+        modelAndView.addObject("pageinfo", pageinfo);
         return modelAndView;
     }
+
+
+
 
     @RequestMapping(value = "/insert")
     public ModelAndView insert(Student Student) {
