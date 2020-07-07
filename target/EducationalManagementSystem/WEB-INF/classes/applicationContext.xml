@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd">
+    <!--    1.配置注解扫描-->    <context:component-scan base-package="com.shhy">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+    <!-- 1 spring 整合MyBatis -->
+    <!-- 1.1 配置连接池,通过连接池管理数据库连接,则不需要独立的mybatis.xml配置文件了 -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="com.mysql.cj.jdbc.Driver"></property>
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/education?serverTimezone=UTC&amp;unicode=true&amp;characterEncoding=UTF-8"></property>
+        <property name="user" value="root"></property>
+        <property name="password" value="123456"></property>
+    </bean>
+    <!-- 1.2 配置sqlSessionFactory工厂,数据源使用数据库连接池提供的数据源(通过ref引用) -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"></property>
+        <property name="plugins">
+            <bean class="com.github.pagehelper.PageInterceptor">
+                <property name="properties">
+                    <props>
+                        <prop key="helperDialect">mysql</prop>
+                    </props>
+                </property>
+            </bean>
+        </property>
+    </bean>
+    <!-- 1.3 配置需要生成动态代理的接口是哪些 -->
+    <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.shhy.dao"></property>
+    </bean>
+    <!-- 2 配置spring框架生命式事务管理 -->
+    <!-- 2.1 配置事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <!-- 2.2 配置事务通知,对于查询的操作(本例中假设查询操作均以find开头)不采用事务管理 -->
+    <tx:advice id="transactionInterceptor" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="find*" read-only="true"/>
+            <tx:method name="*" isolation="DEFAULT"/>
+        </tx:attributes>
+    </tx:advice>
+
+<!--    &lt;!&ndash; 3 配置AOP增强 &ndash;&gt;-->
+<!--    <aop:config>-->
+<!--        <aop:advisor advice-ref="transactionInterceptor"-->
+<!--                     pointcut="execution(* com.shhy.service.impl.*ServiceImpl.*(..))"/>-->
+<!--    </aop:config>-->
+
+
+<!--    &lt;!&ndash;    4 配置文件上传解析器&ndash;&gt;-->
+<!--    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">-->
+<!--        <property name="defaultEncoding" value="utf-8"></property>-->
+<!--        <property name="maxUploadSize" value="5242440"></property>-->
+<!--        &lt;!&ndash;设置最大支持的上传文件大小 B&ndash;&gt;-->
+<!--    </bean>-->
+</beans>
