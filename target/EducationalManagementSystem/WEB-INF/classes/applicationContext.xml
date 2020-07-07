@@ -22,12 +22,9 @@
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <property name="driverClass" value="com.mysql.cj.jdbc.Driver"></property>
         <property name="jdbcUrl"
-                  value="jdbc:mysql://localhost:3306/education?serverTimezone=UTC&amp;unicode=true&amp;characterEncoding=UTF-8"></property>
+                  value="jdbc:mysql://localhost:3306/shhyssm?serverTimezone=UTC&amp;unicode=true&amp;characterEncoding=UTF-8"></property>
         <property name="user" value="root"></property>
-
-        <property name="password" value="123456"></property>
-        
-
+        <property name="password" value="660230"></property>
     </bean>
     <!-- 1.2 配置sqlSessionFactory工厂,数据源使用数据库连接池提供的数据源(通过ref引用) -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -44,7 +41,7 @@
     </bean>
     <!-- 1.3 配置需要生成动态代理的接口是哪些 -->
     <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.shhy.dao"></property>
+        <property name="basePackage" value="vip.shhy.dao"></property>
     </bean>
     <!-- 2 配置spring框架生命式事务管理 -->
     <!-- 2.1 配置事务管理器 -->
@@ -66,10 +63,10 @@
 <!--    </aop:config>-->
 
 
-<!--    &lt;!&ndash;    4 配置文件上传解析器&ndash;&gt;-->
-<!--    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">-->
-<!--        <property name="defaultEncoding" value="utf-8"></property>-->
-<!--        <property name="maxUploadSize" value="5242440"></property>-->
-<!--        &lt;!&ndash;设置最大支持的上传文件大小 B&ndash;&gt;-->
-<!--    </bean>-->
+    <!--    4 配置文件上传解析器-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="utf-8"></property>
+        <property name="maxUploadSize" value="5242440"></property>
+        <!--设置最大支持的上传文件大小 B-->
+    </bean>
 </beans>
