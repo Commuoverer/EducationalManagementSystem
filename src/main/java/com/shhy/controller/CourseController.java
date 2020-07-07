@@ -3,12 +3,11 @@ package com.shhy.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.shhy.domain.Course;
 import com.shhy.domain.CourseAndTeacher;
 import com.shhy.domain.ScoreSC;
-import com.shhy.domain.Student;
 import com.shhy.service.CourseService;
 import com.shhy.service.ScoreService;
-import com.shhy.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,10 +23,10 @@ public class CourseController {
     @Autowired
     private CourseService courseService;
     private ScoreService scoreService;
-    @RequestMapping(value = "/allCourses",method = RequestMethod.GET)
+    @RequestMapping(value = "/list",method = RequestMethod.GET)
     public ModelAndView findAll(@RequestParam(value = "page",defaultValue = "1")Integer page, @RequestParam(value = "pageSize",defaultValue = "3")Integer pageSize){
         PageHelper.startPage(page,pageSize);
-        ModelAndView modelAndView = new ModelAndView("/student/allCourses");
+        ModelAndView modelAndView = new ModelAndView("course/allCourses");
         System.out.println("courseController的工作");
         List<CourseAndTeacher> courses = courseService.findAll();
         //创建一个PageInfo对象,用以封装查询到的数据,同时指定页码导航列表的数目
@@ -52,4 +51,34 @@ public class CourseController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/insert")
+    public ModelAndView insert(Course course) {
+        System.out.println(course);
+        Integer i = courseService.insert(course);
+        ModelAndView modelAndView = new ModelAndView("redirect:list");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/delete")
+    public ModelAndView delete(@RequestParam Integer id) {
+        Integer i = courseService.delete(id);
+        ModelAndView modelAndView = new ModelAndView("redirect:list");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/findOne")
+    public ModelAndView findOne(@RequestParam Integer id) {
+        ModelAndView modelAndView = new ModelAndView("course/updateForm");
+        Course course = courseService.findOne(id);
+        modelAndView.addObject("course", course);
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/update")
+    public ModelAndView update(Course course) {
+        System.out.println(course);
+        Integer i = courseService.update(course);
+        ModelAndView modelAndView = new ModelAndView("redirect:list");
+        return modelAndView;
+    }
 }
