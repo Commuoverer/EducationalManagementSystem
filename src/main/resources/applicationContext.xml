@@ -24,7 +24,7 @@
         <property name="jdbcUrl"
                   value="jdbc:mysql://localhost:3306/education?serverTimezone=UTC&amp;unicode=true&amp;characterEncoding=UTF-8"></property>
         <property name="user" value="root"></property>
-        <property name="password" value="660230"></property>
+        <property name="password" value="fd27681278"></property>
     </bean>
     <!-- 1.2 配置sqlSessionFactory工厂,数据源使用数据库连接池提供的数据源(通过ref引用) -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
