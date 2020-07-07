@@ -81,4 +81,10 @@ public class CourseController {
         ModelAndView modelAndView = new ModelAndView("redirect:list");
         return modelAndView;
     }
+
+    @RequestMapping(value = "/addForm")
+    public String toAddForm(){
+        return "course/addForm";
+    }
+
 }
