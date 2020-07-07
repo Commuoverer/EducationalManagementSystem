@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: ASUS
+  Date: 2020/7/6
+  Time: 21:07
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
@@ -6,13 +13,15 @@
 //    可以将该对象放在session里,只需要在页面调用即可,应该在所有的允许用户直接访问的view中添加
     request.getSession().setAttribute("app",app);
 %>
-
 <html>
+<head>
+    <title>登录页面</title>
+</head>
 <body>
-<h2>你的登录方式</h2>
-
-<a href="${app}/student/login">学生登录</a>
-<a href="${app}/teacher/login">教师登录</a>
-<a href="${app}/administrator/login">管理员登录</a>
+<form method="post" action="${app}/teacher/teacherLoginCheck">
+<input type="text" name="tid" placeholder="请输入教师职工号">
+<input type="password" name="password" placeholder="请输入密码">
+<button type="submit">登 录</button>
+</form>
 </body>
 </html>

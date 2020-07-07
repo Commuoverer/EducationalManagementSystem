@@ -39,4 +39,9 @@ public class TeacherServiceImpl implements TeacherService {
     public Teacher findOne(Integer id) {
         return teacherMapper.findOne(id);
     }
+
+    @Override
+    public Teacher findoneByteacher(Teacher teacher) {
+        return teacherMapper.findoneByteacher(teacher);
+    }
 }
