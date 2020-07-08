@@ -11,14 +11,17 @@ import com.shhy.domain.Teacher;
 import com.shhy.service.CourseService;
 
 import com.shhy.service.StudentService;
+import com.shhy.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping(value = "/course")
@@ -26,10 +29,12 @@ public class CourseController {
     @Autowired
     private CourseService courseService;
 
+    @Autowired
+    private TeacherService teacherService;
 
     @RequestMapping(value = "/insert")
     public ModelAndView insert(Course course) {
-
+        System.out.println(course);
         Integer i = courseService.insert(course);
         ModelAndView modelAndView = new ModelAndView("redirect:list");
         return modelAndView;
@@ -85,6 +90,28 @@ public class CourseController {
     @RequestMapping(value = "/addForm")
     public String toAddForm(){
         return "course/addForm";
+    }
+
+    @ResponseBody
+    @RequestMapping (value = "/userExist")
+    public String userExist(@RequestParam(value = "cid")Integer cid){
+        Course course=courseService.findBycid(cid);
+        if(course!=null&&course.getCid().equals(cid)){
+            return "yes";
+        }else {
+            return "no";
+        }
+    }
+
+    @ResponseBody
+    @RequestMapping (value = "/userExisttid")
+    public String userExisttid(@RequestParam(value = "tid")Integer tid){
+        Teacher one = teacherService.findOne(tid);
+        if(one!=null&&one.getTid().equals(tid)){
+            return "no";
+        }else {
+            return "yes";
+        }
     }
 
 }

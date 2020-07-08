@@ -28,7 +28,10 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public Integer insert(Course course) {
-        return courseMapper.insert(course);
+        Course bycid = courseMapper.findBycid(course.getCid());
+        if(bycid==null){
+        return courseMapper.insert(course);}
+        return 0;
     }
 
     @Override
@@ -47,7 +50,10 @@ public class CourseServiceImpl implements CourseService {
         return courseMapper.findAll(courseAndTeacher);
     }
 
-
+    @Override
+    public Course findBycid(Integer cid) {
+        return courseMapper.findBycid(cid);
+    }
 
 
 }

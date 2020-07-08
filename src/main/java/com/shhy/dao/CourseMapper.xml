@@ -14,7 +14,9 @@
         update course set cname=#{cname},tid=#{tid},location=#{location},ctime=#{ctime} where cid=#{cid}
     </update>
 
-
+    <select id="findBycid" resultType="com.shhy.domain.Course">
+        select * from course where cid=#{cid}
+    </select>
 
 
     <select id="findAll" parameterType="com.shhy.domain.CourseAndTeacher" resultMap="CourseFindAllBean">

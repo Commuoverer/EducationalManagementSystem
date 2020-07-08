@@ -101,8 +101,9 @@
                         <div class="form-group">
                             <label for="client-name0" class="col-sm-2 control-label">课程号 *</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="client-name0" name="cid" placeholder="请输入课程号">
+                                <input type="text" class="form-control" id="client-name0" name="cid" placeholder="请输入课程号:101、102...">
                             </div>
+                            <div id="cidTips" class="col-sm-2 control-label"></div>
                         </div>
                         <div class="form-group">
                             <label for="client-name" class="col-sm-2 control-label">课程名 *</label>
@@ -113,8 +114,9 @@
                         <div class="form-group">
                             <label for="client-name1" class="col-sm-2 control-label">任课老师职工号 *</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="client-name1" name="tid" placeholder="请输入职工号">
+                                <input type="text" class="form-control" id="client-name1" name="tid" placeholder="请输入职工号:100001、100002...">
                             </div>
+                            <div id="tidTips" class="col-sm-2 control-label"></div>
                         </div>
                         <div class="form-group">
                             <label for="client-name3" class="col-sm-2 control-label">上课地点 *</label>
@@ -130,17 +132,74 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-info btn-flat">Submit</button>
+                                <button type="submit" id="submit3" class="btn btn-info btn-flat">Submit</button>
                             </div>
                         </div>
                     </form>
 
                 </div><!--/.c_content-->
 
+
             </div><!--/.c_panels-->
             <!--======== END BUG TRACKER FORM ========-->
+            <script  type="text/javascript" src="${app}/js/jquery.js"></script>
+            <script type="text/javascript">
+                $(function (){
+                    var sta=false;
+                    $("#client-name0").keyup(function () {
 
+                        $.get(
+                            "${app}/course/userExist?cid="+$("#client-name0").val(),
+                            function (result) {
+                                if(result=="yes"){
+                                    $("#cidTips").text("课程号已存在");
+                                    $("#submit3").addClass("disabled");
+                                    sta=false;
+                                }else {
+                                    $("#cidTips").text(" ");
+                                    $("#submit3").removeClass("disabled");
+                                    sta=true;
+                                }
+                            }
+                        );
+                    });
+                    $("#submit3").click(function () {
+                        if (sta){
+                            return true;
+                        }
+                        else {return false;}
+                    })
+                });
+            </script>
+            <script type="text/javascript">
+                $(function (){
+                    var sta=false;
+                    $("#client-name1").keyup(function () {
 
+                        $.get(
+                            "${app}/course/userExisttid?tid="+$("#client-name1").val(),
+                            function (result) {
+                                if(result=="yes"){
+                                    $("#tidTips").text("不存在");
+                                    $("#submit3").addClass("disabled");
+                                    sta=false;
+                                }else {
+                                    $("#tidTips").text(" ");
+                                    $("#submit3").removeClass("disabled");
+                                    sta=true;
+                                }
+                            }
+                        );
+                    });
+                    $("#submit3").click(function () {
+                        if (sta){
+                            return true;
+                        }
+                        else {return false;}
+                    })
+                });
+            </script>
+<!-- 重名检测 -->
         </section>
     </section>
 

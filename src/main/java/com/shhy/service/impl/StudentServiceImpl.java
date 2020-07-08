@@ -25,7 +25,11 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Integer insert(Student student) {
-        return studentMapper.insert(student);
+        Student bysname = studentMapper.findBysname(student.getSname());
+        if(bysname==null) {
+            return studentMapper.insert(student);
+        }
+        return 0;
     }
 
     @Override
@@ -53,5 +57,10 @@ public class StudentServiceImpl implements StudentService {
     public Student findOneByStudent(Student student) {
         Student oneByStudent = studentMapper.findOneByStudent(student);
         return oneByStudent;
+    }
+
+    @Override
+    public Student findBysname(String sname) {
+        return studentMapper.findBysname(sname);
     }
 }

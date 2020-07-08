@@ -11,6 +11,6 @@ public interface StudentService {
     List<Student> findAll();//查找所有记录   select * from user
     Student findOne(Integer id);//查找一条记录,   select * from user where id=xxx
     Student findOneByStudent(Student student);//根据user对象的多个属性匹配,此例中用于登录检查
-//    Student findOneByUsername(String username);//根据用户名返回用户信息,用于检测用户是否存在
+    Student findBysname(String sname);//根据用户名返回用户信息,用于检测用户是否存在
 
 }
