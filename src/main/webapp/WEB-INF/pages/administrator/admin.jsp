@@ -156,7 +156,7 @@
 
                             <div class="profile-options-list animated zoomIn">
 
-                    <p><a href="${app}/administrator/update" target="mainF">修改信息</a></p>
+                    <p><a href="${app}/administrator/updateForm" target="mainF">修改信息</a></p>
 
                     <p><a href="${app}/administrator/logout">退出登录</a></p>
                             </div>
