@@ -315,9 +315,9 @@
                     </li>
                     <li class='sub-menu '><a href="1" class="hvr-bounce-to-right-sidebar-parent"><span class='icon-sidebar pe-7s-portfolio fa-2x'></span><span>学生信息</span></a>
                         <ul class='sub'>
-                            <li><a href="${app}/student/list">学生信息查询</a>
+                            <li><a href="${app}/student/list" target="mainF">学生信息查询</a>
                             </li>
-                            <li><a href="${app}/student/addForm">学生信息添加</a>
+                            <li><a href="${app}/student/addForm" target="mainF">学生信息添加</a>
                             </li>
                             <li><a href="${app}/administrator/studentSystem/studentAdd">还要什么</a>
                             </li>
@@ -326,9 +326,9 @@
                     </li>
                     <li class='sub-menu '><a href="1" class="hvr-bounce-to-right-sidebar-parent"><span class='icon-sidebar pe-7s-display2 fa-2x'></span><span>教师信息</span></a>
                         <ul class='sub'>
-                            <li><a href="${app}/teacher/list">教师信息查询</a>
+                            <li><a href="${app}/teacher/list" target="mainF">教师信息查询</a>
                             </li>
-                            <li><a href="${app}/teacher/addForm">教师信息添加</a>
+                            <li><a href="${app}/teacher/addForm" target="mainF">教师信息添加</a>
                             </li>
                             <li><a href='ui-admin/hover-ideas.html'>还要什么</a>
                             </li>
@@ -336,9 +336,9 @@
                     </li>
                     <li class='sub-menu '><a href="1" class="hvr-bounce-to-right-sidebar-parent"><span class='icon-sidebar pe-7s-note fa-2x'></span><span>课程信息</span></a>
                         <ul class='sub'>
-                            <li><a href="${app}/course/list">课程信息查询</a>
+                            <li><a href="${app}/course/list" target="mainF">课程信息查询</a>
                             </li>
-                            <li><a href="${app}/course/addForm">课程信息添加</a>
+                            <li><a href="${app}/course/addForm" target="mainF">课程信息添加</a>
                             </li>
                             <li><a href='fonts/font-simple-line-icons.html'>还要什么</a>
                             </li>
@@ -362,27 +362,6 @@
         </div>
     </aside>    <!--sidebar end-->
 
-    <!-- /menu footer buttons -->
-
-    <!--<div class="sidebar-footer hidden-small">
-        <a class="tooltip-settings" title="Settings">
-            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-        </a>
-        <a class="tooltip-fullscreen" title="Full Screen">
-            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-        </a>
-        <a class="tooltip-resize-fullscreen" title="Resize Screen" style='display:none'>
-            <span class="glyphicon glyphicon-resize-full" aria-hidden="true"></span>
-        </a>
-        <a class="tooltip-lock" title="Lock">
-            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-        </a>
-        <a class="tooltip-logout" title="Logout">
-            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-        </a>
-    </div>-->    <!-- /menu footer buttons -->
-
-    <!--main content start-->
     <section id="main-content">
 
 
@@ -418,115 +397,8 @@
 
             </div>
             <!--======== Page Title and Breadcrumbs End ========-->
-            <div class="row">
-                <div class="col-md-4">
-                    <!--======== Weather Forecast Start ========-->
-                    <div class="row">
-
-                        <div class="col-md-12">
-
-                            <div class="widget">
-                                <div class="widget-header bg-white">
-                                    <h3 class="fg-gray">WEATHER FORECAST</h3>
-                                </div>
-                                <div class="widget-content bg-white">
-
-                                    <div class="row">
-                                        <div class="col-md-12 text-center padding-10">
-                                            <div class="weather-icon">
-                                                    <span>
-                                                        <canvas height="84" width="84" id="partly-cloudy-day"></canvas>
-                                                    </span>
-                                            </div>
-                                            <div class="weather-temperature">
-                                                <b>Monday</b>, 07:30 AM
-                                                <span>F</span>
-                                                <span><b>C</b></span>
-                                            </div>
-                                            <div class="weather-text">
-                                                <h2>Manila</h2>
-                                                <p class="text-muted">Partly Cloudy Day</p>
-                                            </div>
-
-                                        </div>
-                                    </div><!--/row-->
-
-                                    <div class="clearfix"></div>
-                                    <div class="row weather-days padding-left-10 padding-right-10">
-                                        <div class="col-xs-2">
-                                            <div class="daily-weather">
-                                                <h2 class="day">Mon</h2>
-                                                <h3 class="degrees">25</h3>
-                                                <span>
-                                                        <canvas id="clear-day" width="32" height="32"></canvas>
-                                                    </span>
-                                                <h5>15
-                                                    <i>km/h</i>
-                                                </h5>
-                                            </div>
-                                        </div><!--/col-xs-2-->
-                                        <div class="col-xs-2">
-                                            <div class="daily-weather">
-                                                <h2 class="day">Tue</h2>
-                                                <h3 class="degrees">25</h3>
-                                                <canvas height="32" width="32" id="rain"></canvas>
-                                                <h5>12
-                                                    <i>km/h</i>
-                                                </h5>
-                                            </div>
-                                        </div><!--/col-xs-2-->
-                                        <div class="col-xs-2">
-                                            <div class="daily-weather">
-                                                <h2 class="day">Wed</h2>
-                                                <h3 class="degrees">27</h3>
-                                                <canvas height="32" width="32" id="snow"></canvas>
-                                                <h5>14
-                                                    <i>km/h</i>
-                                                </h5>
-                                            </div>
-                                        </div><!--/col-xs-2-->
-                                        <div class="col-xs-2">
-                                            <div class="daily-weather">
-                                                <h2 class="day">Thu</h2>
-                                                <h3 class="degrees">28</h3>
-                                                <canvas height="32" width="32" id="sleet"></canvas>
-                                                <h5>15
-                                                    <i>km/h</i>
-                                                </h5>
-                                            </div>
-                                        </div><!--/col-xs-2-->
-                                        <div class="col-xs-2">
-                                            <div class="daily-weather">
-                                                <h2 class="day">Fri</h2>
-                                                <h3 class="degrees">28</h3>
-                                                <canvas height="32" width="32" id="wind"></canvas>
-                                                <h5>11
-                                                    <i>km/h</i>
-                                                </h5>
-                                            </div>
-                                        </div><!--/col-xs-2-->
-                                        <div class="col-xs-2">
-                                            <div class="daily-weather">
-                                                <h2 class="day">Sat</h2>
-                                                <h3 class="degrees">26</h3>
-                                                <canvas height="32" width="32" id="cloudy"></canvas>
-                                                <h5>10
-                                                    <i>km/h</i>
-                                                </h5>
-                                            </div>
-                                        </div><!--/col-xs-2-->
-                                    </div><!--/row-->
-
-                                </div><!--/widget-content-->
-                            </div><!--/widget-->
-
-                        </div>
-
-                    </div><!--/.row-->
-                    <!--======== Weather Forecast End ========-->
-
-                </div><!--/.col-md-4-->
-
+            <div class="row1">
+                <iframe name="mainF" frameborder="0" width="100%" height="600"></iframe>
             </div><!--/.row-->
 
         </section>

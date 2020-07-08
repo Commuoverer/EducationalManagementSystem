@@ -10,4 +10,5 @@ public interface CourseService {
     Integer delete(Integer cid);
     Integer update(Course course);
     List<CourseAndTeacher> findAll(CourseAndTeacher courseAndTeacher);
+
 }

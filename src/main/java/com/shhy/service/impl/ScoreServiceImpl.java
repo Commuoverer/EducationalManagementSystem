@@ -1,8 +1,8 @@
 package com.shhy.service.impl;
 
-import com.shhy.dao.CourseMapper;
 import com.shhy.dao.ScoreMapper;
 import com.shhy.domain.Score;
+
 
 
 import com.shhy.domain.ScoreSCT;
@@ -36,6 +36,7 @@ public class ScoreServiceImpl implements ScoreService {
     @Override
     public List<ScoreSCT> findAll(ScoreSCT scoreSCT) {
         return scoreMapper.findAll(scoreSCT);
+
     }
 
 

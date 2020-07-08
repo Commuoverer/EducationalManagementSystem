@@ -11,7 +11,7 @@
         delete from student where sid=#{sid}
     </delete>
     <update id="update" parameterType="com.shhy.domain.Student">
-        update student set sname=#{sname},password=#{password},sex=#{sex},age=#{age},grade=#{grade},sdepartment=#{sdepartment},specialty=#{specialty} where id=#{id}
+        update student set sname=#{sname},password=#{password},sex=#{sex},age=#{age},grade=#{grade},sdepartment=#{sdepartment},specialty=#{specialty} where sid=#{sid}
     </update>
     <select id="findOne" parameterType="int" resultType="com.shhy.domain.Student">
         select * from student where sid=#{sid}

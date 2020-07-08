@@ -1,5 +1,6 @@
 package com.shhy.service.impl;
 
+import com.shhy.dao.CourseMapper;
 import com.shhy.dao.TeacherMapper;
 import com.shhy.domain.Teacher;
 import com.shhy.service.TeacherService;
@@ -13,6 +14,9 @@ public class TeacherServiceImpl implements TeacherService {
 
     @Autowired
     private TeacherMapper teacherMapper;
+
+    @Autowired
+    private CourseMapper courseMapper;
 
     @Override
     public Integer insert(Teacher teacher) {

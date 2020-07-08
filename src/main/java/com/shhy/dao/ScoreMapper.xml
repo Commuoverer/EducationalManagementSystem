@@ -28,10 +28,6 @@
         update score set score=#{score} where sid=#{sid} and cid=#{cid}
     </update>
 
-<!--    <select id="studentFindOneScore"  resultType="com.shhy.domain.ScoreSC">-->
-<!--        select course.cid,course.cname,teacher.tname,score.score from course,student,teacher,score-->
-<!--        where student.sid=score.sid and score.cid=course.cid and course.tid=teacher.tid and course.cname=#{cname} and student.sid=#{sid}-->
-<!--    </select>-->
 
     <select id="findAll" parameterType="com.shhy.domain.ScoreSCT" resultType="com.shhy.domain.ScoreSCT">
         select course.cid,course.cname,teacher.tname,score.score from course,student,teacher,score
@@ -59,16 +55,4 @@
 
     </select>
 
-<!--    <select id="teacherFindOneScore"  resultType="com.shhy.domain.ScoreTC">-->
-<!--       select student.sid,student.sname,student.grade, course.cid,course.cname,score.score from course,student,teacher,score-->
-<!--       where student.sid=score.sid and score.cid=course.cid and course.tid=teacher.tid course.cname=#{cname} and teacher.tid=#{tid}-->
-<!--    </select>-->
-
-
-    <!--    <select id="findOneByUser" resultType="com.shhy.domain.User" parameterType="com.shhy.domain.User">-->
-    <!--        select * from USER where username=#{username} and password=#{password}-->
-    <!--    </select>-->
-    <!--    <select id="findOneByUsername" resultType="com.shhy.domain.User" parameterType="String">-->
-    <!--        select * from USER where username=#{username}-->
-    <!--    </select>-->
 </mapper>
