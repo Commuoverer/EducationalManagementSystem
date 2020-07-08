@@ -53,7 +53,7 @@ public class ScoreController {
         scoreSCT.setCid(cid);
         ModelAndView modelAndView = new ModelAndView("score/updateForm");
         List<ScoreSCT> scoreSCTS  = scoreService.findAll(scoreSCT);
-        modelAndView.addObject("course", scoreSCTS);
+        modelAndView.addObject("scoreSCT", scoreSCTS);
         return modelAndView;
     }
 

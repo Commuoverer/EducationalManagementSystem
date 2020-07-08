@@ -47,6 +47,9 @@
             <if test="sdepartment!=null and sdepartment!=''">
                 and sdepartment like concat('%','${sdepartment}','%')
             </if>
+            <if test="cid!=null and cid!=''">
+                and course.cid=#{cid}
+            </if>
             <if test="true">
                and student.sid=score.sid and score.cid=course.cid and course.tid=teacher.tid
             </if>
