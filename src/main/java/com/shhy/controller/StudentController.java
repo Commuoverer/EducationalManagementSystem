@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -66,6 +67,19 @@ public class StudentController {
         ModelAndView modelAndView = new ModelAndView("redirect:list");
         return modelAndView;
     }
+
+//    @RequestMapping(value="findOneById")
+//    public ModelAndView findOneById(@RequestParam Integer sid){
+//        System.out.println("======="+sid);
+//        ModelAndView modelAndView = new ModelAndView("student/list");
+//        Student student = studentService.findOne(sid);
+//        List<Student> students= new ArrayList<>();
+//        students.add(student);
+//
+//        System.out.println(students);
+//        modelAndView.addObject("student", students);
+//        return modelAndView;
+//    }
 
     @RequestMapping(value = "/addForm")
     public String toAddForm() {

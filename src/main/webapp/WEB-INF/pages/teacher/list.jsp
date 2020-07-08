@@ -79,9 +79,30 @@
 <body id="default-scheme" class="theme-sidebar-2">
 
 <section id="container">
-
-    <section class="wrapper">
-
+<%--    <div class="col-md-12">--%>
+<%--        <div class="c_panel">--%>
+<%--            <div class="c_content">--%>
+<%--                <form>--%>
+<%--                    <div class="row">--%>
+<%--                        <div class="col-sm-12">--%>
+<%--                            <div class="form-group">--%>
+<%--                                <label class="control-label">教师信息搜索</label>--%>
+<%--                                <div class="row">--%>
+<%--                                    <div class="col-sm-3">--%>
+<%--                                        <input type="text" class="form-control margin-top-5" name="tid"--%>
+<%--                                               placeholder="教工号">--%>
+<%--                                    </div>--%>
+<%--                                    <div class="form-group">--%>
+<%--                                        <button type="submit" class="btn btn-success btn-flat">搜索</button>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                </form>--%>
+<%--            </div><!--/.c_content-->--%>
+<%--        </div><!--/.c_panels-->--%>
+<%--    </div>--%>
         <!--======== START CLIENT DETAILS FORM ========-->
         <div class="col-md-12">
 
@@ -162,8 +183,6 @@
             </div><!--/.c_panels-->
 
         </div><!--/col-md-6-->
-        <!--======== END BUG TRACKER FORM ========-->
-    </section>
 
 </section><!--/.container-->
 

@@ -94,6 +94,11 @@ public class adminController {
     /**
      * 使用户点击后能够跳转到登录页面
      */
+    @RequestMapping(value = "/updateForm")
+    public String toUpdateForm(){
+        return "administrator/updateForm";
+    }
+
     @RequestMapping(value = "/login")
     public String toLogin() {
         return "administrator/login";
