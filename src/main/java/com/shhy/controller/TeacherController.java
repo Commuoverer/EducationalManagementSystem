@@ -50,6 +50,14 @@ public class TeacherController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/findOne")
+    public ModelAndView findOne(@RequestParam Integer id) {
+        ModelAndView modelAndView = new ModelAndView("teacher/updateForm");
+        Teacher teacher = teacherService.findOne(id);
+        modelAndView.addObject("teacher", teacher);
+        return modelAndView;
+    }
+
     @RequestMapping(value = "/update")
     public ModelAndView update(Teacher teacher){
         System.out.println(teacher);

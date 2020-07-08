@@ -115,8 +115,8 @@
 </div>
 <div class="wrapper">
     <div class="preview" style="margin:0 auto">
-        <a href="${app}/administrator/login" target="_blank"><img src="${app}/images/demo/admin1.png" alt="管理员登入" /></a>
-        <h2><a href="${app}/administrator/login" target="_blank">点击登录</a></h2>
+        <a href="${app}/administrator/login" target="_self"><img src="${app}/images/demo/admin1.png" alt="管理员登入" /></a>
+        <h2><a href="${app}/administrator/login" target="_self">点击登录</a></h2>
     </div>
     <br class="clear" />
 </div>

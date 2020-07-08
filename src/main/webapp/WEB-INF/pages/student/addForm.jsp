@@ -107,10 +107,9 @@
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="client-name" name="sname" placeholder="请输入姓名">
                             </div>
-                            <div id="snameTips" class="col-sm-2 control-label"></div>
                         </div>
                         <div class="form-group">
-                            <label for="department" class="col-sm-2 control-label">性别 *</label>
+                            <label for="department" class="col-sm-2 control-label">性 别 *</label>
                             <div class="col-sm-10">
                                 <select class="select2" id="department" type="text" name="sex">
                                     <option>男</option>
@@ -119,7 +118,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="client-name1" class="col-sm-2 control-label">年 龄</label>
+                            <label for="client-name1" class="col-sm-2 control-label">年 龄 *</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="client-name1" name="age" placeholder="请输入年龄">
                             </div>
@@ -144,7 +143,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" id="submit2" class="btn btn-info btn-flat">Submit</button>
+                                <button type="submit" class="btn btn-info btn-flat">提交</button>
                             </div>
                         </div>
                     </form>
@@ -153,36 +152,8 @@
 
             </div><!--/.c_panels-->
             <!--======== END BUG TRACKER FORM ========-->
-            <script  type="text/javascript" src="${app}/js/jquery.js"></script>
-            <script type="text/javascript">
-                $(function (){
-                    var sta=false;
-                    $("#client-name").keyup(function () {
 
-                        $.get(
-                            "${app}/student/userExist?sname="+$("#client-name").val(),
-                            function (result) {
-                                if(result=="yes"){
-                                    $("#snameTips").text("用户已存在");
-                                    $("#submit2").addClass("disabled");
-                                    sta=false;
-                                }else {
-                                    $("#snameTips").text(" ");
-                                    $("#submit2").removeClass("disabled");
-                                    sta=true;
-                                }
-                            }
-                        );
-                    });
-                    $("#submit2").click(function () {
-                        if (sta){
-                            return true;
-                        }
-                        else {return false;}
-                    })
-                });
-            </script>
-            <!-- 重名检测 -->
+
         </section>
     </section>
 

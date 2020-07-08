@@ -3,6 +3,7 @@ package com.shhy.controller;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.shhy.domain.Administrator;
+import com.shhy.domain.Student;
 import com.shhy.service.adminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -46,6 +47,14 @@ public class adminController {
     public ModelAndView delete(@RequestParam Integer id) {
         Integer i = adminservice.delete(id);
         ModelAndView modelAndView = new ModelAndView("redirect:list");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/findOne")
+    public ModelAndView findOne(@RequestParam Integer id) {
+        ModelAndView modelAndView = new ModelAndView("administrator/updateForm");
+        Administrator administrator= adminservice.findOne(id);
+        modelAndView.addObject("administrator", administrator);
         return modelAndView;
     }
 

@@ -89,35 +89,23 @@
             <div class="c_panel">
 
                 <div class="c_title bg-info padding-top-20 padding-bottom-20">
-                    <h2><span class="font-bold">教师信息修改</span></h2>
+                    <h2><span class="font-bold">管理员信息修改</span></h2>
                     <div class="clearfix"></div>
                 </div><!--/.c_title-->
 
                 <div class="c_content">
 
-                    <form method="post" class="form-horizontal" action="${app}/teacher/update?tid=${teacher.tid}">
+                    <form method="post" class="form-horizontal" action="${app}/administrator/update?id=${administrator.id}">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">用户名 *</label>
+                            <div class="col-sm-10">
+                                <th class="form-control">${administrator.id}</th>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label for="client-name0" class="col-sm-2 control-label">密 码 *</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="client-name0" name="password" value="${teacher.password}" placeholder="请输入密码">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="client-name" class="col-sm-2 control-label">姓 名 *</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="client-name" name="tname" value="${teacher.tname}" placeholder="请输入姓名">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="client-name9" class="col-sm-2 control-label">职 称 *</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="client-name9" name="title" value="${teacher.title}" placeholder="请输入职称">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="client-name3" class="col-sm-2 control-label">所在院系 *</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="client-name3" name="tdepartment" value="${teacher.tdepartment}" placeholder="所在院系">
+                                <input type="text" class="form-control" id="client-name0" name="password" value="${administrator.password}" placeholder="请输入密码">
                             </div>
                         </div>
 

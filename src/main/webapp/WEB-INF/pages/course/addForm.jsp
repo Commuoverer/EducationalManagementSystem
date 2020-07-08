@@ -132,7 +132,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" id="submit3" class="btn btn-info btn-flat">Submit</button>
+                                <button type="submit" id="submit3" class="btn btn-info btn-flat">提交</button>
                             </div>
                         </div>
                     </form>

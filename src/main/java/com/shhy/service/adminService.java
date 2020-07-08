@@ -1,6 +1,7 @@
 package com.shhy.service;
 
 import com.shhy.domain.Administrator;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
