@@ -99,6 +99,8 @@
                         <span class=" fa fa-angle-down"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-usermenu animated fadeInUp pull-right">
+                        <li><a href="${app}/administrator/updateForm" class="hvr-bounce-to-right" target="mainF"><i class=" icon-login pull-right"></i> 修改信息</a>
+                        </li>
                         <li><a href="${app}/administrator/logout" class="hvr-bounce-to-right"><i class=" icon-login pull-right"></i> 退出登录</a>
                         </li>
                     </ul>
@@ -128,7 +130,10 @@
                             <p class="text-right profile-options"><span class="profile-options-close pe-7s-close fa-2x font-bold"></span></p>
 
                             <div class="profile-options-list animated zoomIn">
-                                <p><a href="${app}/administrator/logout">退出登录</a></p>
+
+                    <p><a href="${app}/administrator/updateForm" target="mainF">修改信息</a></p>
+
+                    <p><a href="${app}/administrator/logout">退出登录</a></p>
                             </div>
 
                         </div>
@@ -220,10 +225,6 @@
                 <div class="page-title">
                     <h3>欢迎使用上海海洋大学教务信息系统</h3>
                     <small>Your admin dashboard.</small>
-                </div>
-
-                <div class="pull-right toggle-right-sidebar">
-                    <span class="fa fa-outdent fa-2x title-open-right-sidebar"></span>
                 </div>
 
             </div>

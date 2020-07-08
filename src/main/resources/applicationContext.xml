@@ -63,10 +63,10 @@
 <!--    </aop:config>-->
 
 
-<!--    &lt;!&ndash;    4 配置文件上传解析器&ndash;&gt;-->
-<!--    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">-->
-<!--        <property name="defaultEncoding" value="utf-8"></property>-->
-<!--        <property name="maxUploadSize" value="5242440"></property>-->
-<!--        &lt;!&ndash;设置最大支持的上传文件大小 B&ndash;&gt;-->
-<!--    </bean>-->
+    <!--    4 配置文件上传解析器-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="utf-8"></property>
+        <property name="maxUploadSize" value="5242440"></property>
+        <!--设置最大支持的上传文件大小 B-->
+    </bean>
 </beans>

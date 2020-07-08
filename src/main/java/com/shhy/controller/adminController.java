@@ -10,10 +10,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
+import java.util.UUID;
 
 @Controller
 @RequestMapping(value = "/administrator")
@@ -59,12 +64,27 @@ public class adminController {
     }
 
     @RequestMapping(value = "/update")
-    public ModelAndView update(Administrator administrator) {
-        System.out.println(administrator);
-        Integer i = adminservice.update(administrator);
-        ModelAndView modelAndView = new ModelAndView("redirect:list");
+    public ModelAndView update(Administrator administrator, HttpServletRequest request, @RequestParam(value = "file")MultipartFile file) throws IOException {
+        //设置图片的存储路径
+        String path = request.getSession().getServletContext().getRealPath("/images/upload");
+        //获取图片的文件名
+        String filename = UUID.randomUUID() + "-" + file.getOriginalFilename();
+        File dir = new File(path, filename);
+        if(!dir.exists()){
+            dir.mkdirs();
+        }
+
+//        上传文件
+        file.transferTo(dir);
+        //photo名字拼接
+        String imageurl = "images/upload/" + filename;
+        administrator.setPhoto(imageurl);
+
+        ModelAndView modelAndView = new ModelAndView("redirect:/admin");
+        adminservice.update(administrator);
         return modelAndView;
     }
+
 
     @RequestMapping(value = "/addForm")
     public String toAddForm() {
@@ -74,6 +94,11 @@ public class adminController {
     /**
      * 使用户点击后能够跳转到登录页面
      */
+    @RequestMapping(value = "/updateForm")
+    public String toUpdateForm(){
+        return "administrator/updateForm";
+    }
+
     @RequestMapping(value = "/login")
     public String toLogin() {
         return "administrator/login";
