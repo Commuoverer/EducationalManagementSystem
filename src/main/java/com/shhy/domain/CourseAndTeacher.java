@@ -7,6 +7,15 @@ public class CourseAndTeacher {
     private String location;
     private String ctime;
     private Teacher teacher;
+    private String NAME;
+
+    public String getNAME() {
+        return NAME;
+    }
+
+    public void setNAME(String NAME) {
+        this.NAME = NAME;
+    }
 
     public Integer getCid() {
         return cid;

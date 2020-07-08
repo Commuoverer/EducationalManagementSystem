@@ -88,7 +88,7 @@
             <div class="c_panel">
 
                 <div class="c_title">
-                    <h2>学生信息</h2>
+                    <h2>教师信息</h2>
                     <ul class="nav navbar-right panel_options">
                         <li>
                             <a class="full-screen">

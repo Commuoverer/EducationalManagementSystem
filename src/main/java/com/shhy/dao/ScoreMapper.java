@@ -14,7 +14,6 @@ import java.util.List;
 public interface ScoreMapper {
 
     Integer insert(Score score);//插入一条新的记录 insert into user (username,password) values (xxx,xxx)
-
     Integer delete(Score score);//删除一条记录  delete from user where id=xxx;
     Integer update(Score score );//更新一条记录  update user set username=xxxx,password=xxxxx,id=xxxx where id=xxx
     List<ScoreSCT> findAll(ScoreSCT scoreSCT);

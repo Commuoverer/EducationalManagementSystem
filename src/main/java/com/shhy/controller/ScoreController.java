@@ -2,11 +2,10 @@ package com.shhy.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.shhy.domain.Course;
-import com.shhy.domain.CourseAndTeacher;
+
 import com.shhy.domain.Score;
 import com.shhy.domain.ScoreSCT;
-import com.shhy.service.CourseService;
+
 import com.shhy.service.ScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

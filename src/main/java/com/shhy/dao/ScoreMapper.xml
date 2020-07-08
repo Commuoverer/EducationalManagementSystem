@@ -11,14 +11,14 @@
     <delete id="delete" parameterType="com.shhy.domain.Score">
         delete from score
         <where>
-            <if test="score.cid!=null and score.sid==null">
+            <if test="score.cid!=null and score.cid!=''">
                 cid=#{cid}
             </if>
-            <if test="score.cid==null and score.sid!=null">
-                sid=#{sid}
+            <if test="score.sid!=null and score.sid!=''">
+                and sid=#{sid}
             </if>
             <if test="score.cid!=null and score.sid!=null">
-                cid=#{cid} and sid=#{sid}
+                and cid=#{cid} and sid=#{sid}
             </if>
         </where>
     </delete>

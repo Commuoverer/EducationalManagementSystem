@@ -15,7 +15,5 @@ public interface CourseMapper {
     List<CourseAndTeacher> findAll(CourseAndTeacher courseAndTeacher);//查询所有课程记录
 
 
-//    Student findOneByUser(Student user);//根据user对象的多个属性匹配,此例中用于登录检查
-//    Student findOneByUsername(String username);//根据用户名返回用户信息,用于检测用户是否存在
 
 }
