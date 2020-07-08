@@ -11,7 +11,7 @@
         delete from administrator where id=#{id}
     </delete>
     <update id="update" parameterType="com.shhy.domain.Administrator">
-        update administrator set id=#{id},password=#{password} where id=#{id}
+        update administrator set id=#{id},password=#{password},photo=#{photo} where id=#{id}
     </update>
     <select id="findOne" parameterType="int" resultType="com.shhy.domain.Administrator">
         select * from administrator where id=#{id}
