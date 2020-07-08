@@ -65,8 +65,7 @@
         }
 
         .preview {
-            float: left;
-            width: 25%;
+            width: 30%;
             margin: 0 3.2em;
             border: 1px solid #eee;
             padding: 5px;
@@ -79,8 +78,8 @@
 
         .page-header {
             background: #3A434D;
-            margin-top: -19px;
-            padding: 15px;
+            margin-top: 4px;
+            padding: 10px;
         }
 
         .page-header > h1:first-child {
@@ -111,27 +110,15 @@
 </head>
 <body leftmargin="0" topmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0">
 <div class="page-header">
-    <h1>Thema v1.5</h1>
-    <h3>Choose admin type below and grab all of them</h3>
+    <h1>上海海洋大学</h1>
+    <h1>教务管理系统</h1>
 </div>
 <div class="wrapper">
-    <div class="preview">
-        <a href="${app}/student/login" target="_blank"><img src="${app}/images/demo/admin1.png" alt="Got 学生登入" /></a>
-        <h2><a href="${app}/student/login" target="_blank">学生登入</a></h2>
+    <div class="preview" style="margin:0 auto">
+        <a href="${app}/administrator/login" target="_blank"><img src="${app}/images/demo/admin1.png" alt="管理员登入" /></a>
+        <h2><a href="${app}/administrator/login" target="_blank">点击登录</a></h2>
     </div>
-
-    <div class="preview">
-        <a href="${app}/teacher/login" target="_blank"><img src="${app}/images/demo/admin2.png" alt="教师登入" /></a>
-        <h2><a href="${app}/teacher/login" target="_blank">教师登入 <span class="badge">New</span></a></h2>
-    </div>
-
-    <div class="preview">
-        <a href="${app}/administrator/login" target="_blank"><img src="${app}/images/demo/admin3.png" alt="管理员登入" /></a>
-        <h2><a href="${app}/administrator/login" target="_blank">管理员登入 <span class="badge">New</span></a></h2>
-    </div>
-
     <br class="clear" />
 </div>
-<a href="${app}/administrator/admin">admin界面</a>
 </body>
 </html>

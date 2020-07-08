@@ -30,7 +30,7 @@
 
 
     <select id="findAll" parameterType="com.shhy.domain.ScoreSCT" resultType="com.shhy.domain.ScoreSCT">
-        select course.cid,course.cname,teacher.tname,score.score from course,student,teacher,score
+        select course.cid,course.cname,teacher.tname,score.score,student.grade, student.sdepartment,student.sid,student.sname from course,student,teacher,score
         <where>
             <if test="sid!=null and sid!=''">
                 student.sid=#{sid}
@@ -39,10 +39,10 @@
                 and cname like concat('%','${cname}','%')
             </if>
             <if test="grade!=null and grade!=''">
-                and grade=#{grade}
+                and grade like concat('%','${grade}','%')
             </if>
             <if test="tname!=null and tname!=''">
-                and tname=#{tname}
+                and tname like concat('%','${tname}','%')
             </if>
             <if test="sdepartment!=null and sdepartment!=''">
                 and sdepartment like concat('%','${sdepartment}','%')

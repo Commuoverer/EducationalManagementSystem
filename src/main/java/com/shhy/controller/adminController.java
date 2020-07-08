@@ -125,8 +125,8 @@ public class adminController {
         ModelAndView modelAndView = new ModelAndView();
         System.out.println(">>>>>>>>>>>>>>>>>" + oneByadmin);
         if (oneByadmin != null) {//表示从数据库得到了数据并被封装为Student对象
-            httpSession.setAttribute("STUDENT_SESSION", oneByadmin); //将返回的用户信息放入session对象
-            modelAndView.setViewName("redirect:/administrator/list");//重定向到其他页面
+            httpSession.setAttribute("ADMIN_SESSION", oneByadmin); //将返回的用户信息放入session对象
+            modelAndView.setViewName("redirect:/administrator/admin");//重定向到其他页面
         } else {
             modelAndView.setViewName("redirect:/administrator/login");
         }

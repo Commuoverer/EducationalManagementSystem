@@ -136,21 +136,21 @@
                         <div class="row">
                             <div class="col-md-8 col-xs-12">
                                 <ul class="pagination">
-                                    <li <c:if test="${pageinfo.isFirstPage}">class="disabled" </c:if> >
-                                        <a href="${app}/teacher/list?page=1">首页</a>
+                                    <li>
+                                        <a href="${app}/teacher/list?page=1" <c:if test="${pageinfo.isFirstPage}">class="btn disabled" </c:if>>首页</a>
                                     </li>
-                                    <li <c:if test="${not pageinfo.hasPreviousPage}">class="disabled" </c:if> >
-                                        <a href="${app}/teacher/list?page=${pageinfo.pageNum-1}">上一页</a>
+                                    <li>
+                                        <a href="${app}/teacher/list?page=${pageinfo.pageNum-1}" <c:if test="${pageinfo.isFirstPage}">class="btn disabled" </c:if>>上一页</a>
                                     </li>
                                     <c:forEach begin="${pageinfo.navigateFirstPage}" end="${pageinfo.navigateLastPage}" var="i">
                                         <li <c:if test="${pageinfo.pageNum == i}"> class="active" </c:if>>
                                             <a href="${app}/teacher/list?page=${i}">${i}</a></li>
                                     </c:forEach>
-                                    <li <c:if test="${not pageinfo.hasNextPage}">class="disabled" </c:if> >
-                                        <a href="${app}/teacher/list?page=${pageinfo.pageNum+1}">下一页</a>
+                                    <li>
+                                        <a href="${app}/teacher/list?page=${pageinfo.pageNum+1}" <c:if test="${pageinfo.isLastPage}">class="btn disabled" </c:if>>下一页</a>
                                     </li>
                                     <li>
-                                        <a href="${app}/teacher/list?page=${pageinfo.pages}">尾页</a>
+                                        <a href="${app}/teacher/list?page=${pageinfo.pages}" <c:if test="${pageinfo.isLastPage}">class="btn disabled" </c:if>>尾页</a>
                                     </li>
                                 </ul>
                             </div>
