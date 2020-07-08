@@ -17,5 +17,4 @@ public interface ScoreMapper {
     Integer delete(@Param(value = "cid")Integer cid,@Param(value = "sid")Integer sid);//删除一条记录  delete from user where id=xxx;
     Integer update(Score score);//更新一条记录  update user set username=xxxx,password=xxxxx,id=xxxx where id=xxx
     List<ScoreSCT> findAll(ScoreSCT scoreSCT);
-
 }

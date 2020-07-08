@@ -68,31 +68,6 @@
 
 <body id="default-scheme">
 
-<!--======== Start Style Switcher ========-->
-<i class="style-switcher-btn fa fa-cogs hidden-xs"></i>
-<div class="style-switcher">
-    <div class="style-swticher-header">
-        <div class="style-switcher-heading fg-white">Color Switcher</div>
-        <div class="theme-close"><i class="icon-close"></i></div>
-    </div>
-
-    <div class="style-swticher-body">
-        <ul class="list-unstyled">
-            <li class="theme-default theme-active" data-style="default"></li>
-            <li class="theme-turquoise" data-style="turquoise"></li>
-            <li class="theme-blue" data-style="blue"></li>
-            <li class="theme-amethyst" data-style="amethyst"></li>
-            <li class="theme-cloud" data-style="cloud"></li>
-            <li class="theme-sun-flower" data-style="sun-flower"></li>
-            <li class="theme-carrot" data-style="carrot"></li>
-            <li class="theme-alizarin" data-style="alizarin"></li>
-            <li class="theme-concrete" data-style="concrete"></li>
-            <li class="theme-wet-ashphalt" data-style="wet-ashphalt"></li>
-        </ul>
-    </div>
-</div><!--/style-switcher-->
-<!--======== End Style Switcher ========-->
-
 <section id="container">
 
     <!--header start-->

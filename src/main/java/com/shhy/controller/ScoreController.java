@@ -7,6 +7,7 @@ import com.shhy.domain.Score;
 import com.shhy.domain.ScoreSCT;
 
 import com.shhy.service.ScoreService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +25,20 @@ public class ScoreController {
 
     @RequestMapping(value = "/insert")
     public ModelAndView insert(Score score) {
-
+        if(score.getCid()==null||score.getSid()==null){
+            ModelAndView modelAndView = new ModelAndView("redirect:addForm");
+            return modelAndView;
+        }
+        ScoreSCT scoreSCT = new ScoreSCT();
+        scoreSCT.setCid(score.getCid());
+        scoreSCT.setSid(score.getSid());
+        List<ScoreSCT> all = scoreService.findAll(scoreSCT);
+        System.out.println("************************************");
+        if(all.size()!=0)
+        {
+            ModelAndView modelAndView = new ModelAndView("redirect:addForm");
+            return modelAndView;
+        }
         Integer i = scoreService.insert(score);
         ModelAndView modelAndView = new ModelAndView("redirect:list");
         return modelAndView;
@@ -61,6 +75,13 @@ public class ScoreController {
     @RequestMapping(value = "/delete")
     public ModelAndView delete(Score score) {
         Integer i = scoreService.delete(score.getCid(),score.getSid());
+        ModelAndView modelAndView = new ModelAndView("redirect:list");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "deletesc")
+    public ModelAndView deletesc(@Param(value = "cid")Integer cid,@Param(value = "sid")Integer sid) {
+        Integer i = scoreService.delete(cid, sid);
         ModelAndView modelAndView = new ModelAndView("redirect:list");
         return modelAndView;
     }
