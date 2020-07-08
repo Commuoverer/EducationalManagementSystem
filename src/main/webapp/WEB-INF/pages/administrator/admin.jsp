@@ -118,10 +118,6 @@
         <div class="top-nav">
 
             <ul class="nav navbar-nav navbar-right">
-                <li class="search-box">
-                    <input type="text" class="form-control search" placeholder=" Search">
-                </li>
-
                 <li class="dropdown">
                     <a href="javascript:void(0);" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                         <img src="${app}/images/profile.jpg" alt="image">管理员
@@ -177,15 +173,12 @@
                     </li>
                     <li class=' '><a href="#" class="hvr-bounce-to-right-sidebar-parent active"><span class='icon-sidebar icon-home fa-2x'></span><span>首页</span></a>
                     </li>
-                    <li class='sub-menu '><a href="1" class="hvr-bounce-to-right-sidebar-parent"><span class='icon-sidebar pe-7s-portfolio fa-2x'></span><span>学生信息</span></a>
+                    <li class='sub-menu '><a href="1" class="hvr-bounce-to-right-sidebar-parent"><span class='icon-sidebar icon-screen-desktop fa-2x'></span><span>学生信息</span></a>
                         <ul class='sub'>
                             <li><a href="${app}/student/list" target="mainF">学生信息查询</a>
                             </li>
                             <li><a href="${app}/student/addForm" target="mainF">学生信息添加</a>
                             </li>
-                            <li><a href="${app}/administrator/studentSystem/studentAdd">还要什么</a>
-                            </li>
-
                         </ul>
                     </li>
                     <li class='sub-menu '><a href="1" class="hvr-bounce-to-right-sidebar-parent"><span class='icon-sidebar pe-7s-display2 fa-2x'></span><span>教师信息</span></a>
@@ -210,17 +203,14 @@
                             </li>
                             <li><a href='${app}/score/list'>成绩查询</a>
                             </li>
-                            <li><a href='data-tables/dynamic-table.html'>Dynamic Table</a>
-                            </li>
-                            <li><a href='data-tables/editable-table.html'>Editable Table</a>
-                            </li>
+
                         </ul>
                     </li>
-                    <li class='sub-menu '><a href="1" class="hvr-bounce-to-right-sidebar-parent"><span class='icon-sidebar pe-7s-display2 fa-2x'></span><span>管理员信息</span></a>
+                    <li class='sub-menu '><a href="1" class="hvr-bounce-to-right-sidebar-parent"><span class='icon-sidebar pe-7s-portfolio fa-2x'></span><span>管理员信息</span></a>
                         <ul class='sub'>
                             <li><a href="${app}/administrator/list" target="mainF">管理员信息查询</a>
                             </li>
-                            <li><a href="${app}/teacher/addForm" target="mainF">教师信息添加</a>
+                            <li><a href="${app}/administrator/addForm" target="mainF">管理员信息添加</a>
                             </li>
                         </ul>
                     </li>

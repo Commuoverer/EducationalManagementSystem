@@ -79,26 +79,36 @@
 <body id="default-scheme" class="theme-sidebar-2">
 
 <section id="container">
-
-    <section class="wrapper">
-
-        <div class="row">
-            <%--                简单查询操作--%>
-            <form method="get" action="${app}/course/list">
-                <div class="col-xs-12 col-md-8">
-
-                    <input type="text" name="cid" placeholder="课程号"/>
-                    <input type="text" name="cname" placeholder="课程名"/>
-                    <input type="text" name="NAME" placeholder="教师名"/>
-
-
-                </div>
-                <div class="col-xs-12 col-md-8">
-                    <input type="submit" value="搜索"/>
-                </div>
-            </form>
+        <!--======== START BUG TRACKER FORM ========-->
+        <div class="col-md-12">
+            <div class="c_panel">
+                <div class="c_content">
+                    <form>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label class="control-label">课程信息搜索</label>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <input type="text" class="form-control margin-top-5" name="cid" placeholder="课程号">
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <input type="text" class="form-control margin-top-5" name="cname" placeholder="课程名">
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <input type="text" class="form-control margin-top-5" name="NAME" placeholder="教师名">
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-success btn-flat">搜索</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div><!--/.c_content-->
+            </div><!--/.c_panels-->
         </div>
-
         <!--======== START CLIENT DETAILS FORM ========-->
         <div class="col-md-12">
             <div class="c_panel">
@@ -129,6 +139,8 @@
                             <th>上课教室</th>
                             <th>上课时间</th>
                             <th>教师姓名</th>
+                            <th>修改</th>
+                            <th>删除</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -149,21 +161,21 @@
                         <div class="row">
                             <div class="col-md-8 col-xs-12">
                                 <ul class="pagination">
-                                    <li <c:if test="${pageinfo.isFirstPage}">class="disabled" </c:if> >
-                                        <a href="${app}/course/list?page=1">首页</a>
+                                    <li>
+                                        <a href="${app}/course/list?page=1" <c:if test="${pageinfo.isFirstPage}">class="btn disabled" </c:if>>首页</a>
                                     </li>
-                                    <li <c:if test="${not pageinfo.hasPreviousPage}">class="disabled" </c:if> >
-                                        <a href="${app}/course/list?page=${pageinfo.pageNum-1}">上一页</a>
+                                    <li>
+                                        <a href="${app}/course/list?page=${pageinfo.pageNum-1}" <c:if test="${pageinfo.isFirstPage}">class="btn disabled" </c:if>>上一页</a>
                                     </li>
                                     <c:forEach begin="${pageinfo.navigateFirstPage}" end="${pageinfo.navigateLastPage}" var="i">
                                         <li <c:if test="${pageinfo.pageNum == i}"> class="active" </c:if>>
                                             <a href="${app}/course/list?page=${i}">${i}</a></li>
                                     </c:forEach>
-                                    <li <c:if test="${not pageinfo.hasNextPage}">class="disabled" </c:if> >
-                                        <a href="${app}/course/list?page=${pageinfo.pageNum+1}">下一页</a>
+                                    <li>
+                                        <a href="${app}/course/list?page=${pageinfo.pageNum+1}" <c:if test="${pageinfo.isLastPage}">class="btn disabled" </c:if>>下一页</a>
                                     </li>
                                     <li>
-                                        <a href="${app}/course/list?page=${pageinfo.pages}">尾页</a>
+                                        <a href="${app}/course/list?page=${pageinfo.pages}" <c:if test="${pageinfo.isLastPage}">class="btn disabled" </c:if>>尾页</a>
                                     </li>
                                 </ul>
                             </div>
@@ -175,8 +187,6 @@
             </div><!--/.c_panels-->
 
         </div><!--/col-md-6-->
-        <!--======== END BUG TRACKER FORM ========-->
-    </section>
 
 </section><!--/.container-->
 
