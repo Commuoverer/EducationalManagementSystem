@@ -13,5 +13,5 @@ public interface TeacherMapper {
     List<Teacher> findAll();
     Teacher findOne(Integer tid);
     Teacher findoneByteacher(Teacher teacher);
-    Teacher findBytname(String tname);
+    Teacher findBytname(String tname);//录入教师信息检测重名
 }

@@ -124,8 +124,7 @@
                         <span class=" fa fa-angle-down"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-usermenu animated fadeInUp pull-right">
-                        <li><a href="${app}/administrator/updateForm" class="hvr-bounce-to-right" target="mainF"><i class=" icon-login pull-right"></i> 修改信息</a>
-                        </li>
+
                         <li><a href="${app}/administrator/logout" class="hvr-bounce-to-right"><i class=" icon-login pull-right"></i> 退出登录</a>
                         </li>
                     </ul>
@@ -156,7 +155,6 @@
 
                             <div class="profile-options-list animated zoomIn">
 
-                    <p><a href="${app}/administrator/updateForm" target="mainF">修改信息</a></p>
 
                     <p><a href="${app}/administrator/logout">退出登录</a></p>
                             </div>
