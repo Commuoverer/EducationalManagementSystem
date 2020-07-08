@@ -70,8 +70,8 @@ public class CourseController {
 
 
     @RequestMapping(value = "/delete")
-    public ModelAndView delete(@RequestParam Integer id) {
-        Integer i = courseService.delete(id);
+    public ModelAndView delete(@RequestParam(value = "cid") Integer cid) {
+        Integer i = courseService.delete(cid);
         ModelAndView modelAndView = new ModelAndView("redirect:list");
         return modelAndView;
     }
