@@ -79,9 +79,6 @@
 
 <section id="container">
 
-
-
- 
     <section id="main-content1">
 
 

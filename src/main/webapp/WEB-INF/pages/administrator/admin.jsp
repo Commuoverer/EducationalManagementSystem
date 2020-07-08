@@ -26,25 +26,6 @@
     <!-- Start Global plugin css -->
     <link href="${app}/css/global-plugins.css" rel="stylesheet">
     <link href="${app}/vendors/jquery-icheck/skins/all.css" rel="stylesheet" />
-    <!-- <link href="${app}/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
-    <!-- <link href="${app}/css/bootstrap-reset.css" rel="stylesheet"> -->
-    <!-- <link href="${app}/vendors/font-awesome/css/font-awesome.css" rel="stylesheet"> -->
-    <!-- <link href="${app}/vendors/pe-icon-7-stroke/css/pe-icon-7-stroke.css" rel="stylesheet" /> -->
-    <!-- <link href="${app}/vendors/pe-icon-7-stroke/css/helper.css" rel="stylesheet"/> -->
-    <!-- <link href="${app}/vendors/jquery-notific8/jquery.notific8.css" rel="stylesheet"> -->
-    <!-- <link href="${app}/vendors/line-icons/line-icons.css" rel="stylesheet" /> -->
-    <!-- <link href="${app}/vendors/jquery-ui/jquery-ui.min.css" rel="stylesheet"> -->
-    <!-- <link href="${app}/vendors/dropdowns-enhancement/css/dropdowns-enhancement.css" rel="stylesheet"> -->
-    <!-- <link href="${app}/vendors/hover/hover.css" rel="stylesheet"> -->
-    <!-- <link href="${app}/vendors/animate/animate.css" rel="stylesheet"> -->
-    <!-- <link href="${app}/vendors/tooltipster/css/tooltipster.css" rel="stylesheet" type="text/css" /> -->
-    <!-- <link href="${app}/vendors/tooltipster/css/themes/tooltipster-light.css" rel="stylesheet" type="text/css" /> -->
-    <!-- <link href="${app}/vendors/tooltipster/css/themes/tooltipster-noir.css" rel="stylesheet" type="text/css" /> -->
-    <!-- <link href="${app}/vendors/tooltipster/css/themes/tooltipster-punk.css" rel="stylesheet" type="text/css" /> -->
-    <!-- <link href="${app}/vendors/tooltipster/css/themes/tooltipster-shadow.css" rel="stylesheet" type="text/css" /> -->
-    <!-- <link href="${app}/vendors/perfect-scrollbar/css/perfect-scrollbar.min.css" rel="stylesheet" /> -->
-    <!-- End Global plugin css -->
-
 
     <!-- This page plugin css start -->
     <link href="${app}/vendors/maps/css/jquery-jvectormap-2.0.1.css" rel="stylesheet" type="text/css"/>
@@ -118,10 +99,10 @@
     <header class="header fixed-top clearfix">
 
         <!--logo start-->
-        <div class="brand">
+        <div class="brand" >
 
             <a href="index.html" class="logo">
-                Thema Admin
+                上海海洋大学教务信息系统
             </a>
             <div class="sidebar-toggle-box">
                 <div class="fa fa-bars"></div>
@@ -136,132 +117,18 @@
          -->
         <div class="top-nav">
 
-            <ul class="nav navbar-nav navbar-left" style="margin-left:30px;">
-                <li>
-                    <a href="javascript:void(0)" class="btn-menu-grid" title="Menu Grid">
-                        <span class="icon-grid"></span>
-                    </a>
-                </li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        Dropdown
-                        <span class=" fa fa-angle-down" style="font-size:12px;"></span>
-                    </a>
-                    <ul class="dropdown-menu animated fadeInUp pull-right">
-                        <li>
-                            <a href="javascript:void(0);" class="hvr-bounce-to-right">  Submenu 1</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" class="hvr-bounce-to-right">
-                                <span class="badge bg-red pull-right">20%</span>
-                                <span>Submenu 2</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" class="hvr-bounce-to-right">Submenu 3</a>
-                        </li>
-                        <li><a href="login.html" class="hvr-bounce-to-right">Submenu 4</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-
             <ul class="nav navbar-nav navbar-right">
                 <li class="search-box">
                     <input type="text" class="form-control search" placeholder=" Search">
                 </li>
-                <li role="presentation" class="dropdown">
-                    <a href="javascript:void(0);" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                        <span class="pe-7s-mail" style="font-size:22.9px;"></span>
-                        <span class="badge bg-color label-danger">6</span>
-                    </a>
-                    <ul id="menu" class="dropdown-menu list-unstyled msg_list animated fadeInUp" role="menu">
-                        <li>
-                            <a class="hvr-bounce-to-right">
-                                    <span class="image">
-                                        <img src="${app}/images/profile.jpg" alt="Profile Image" />
-                                    </span>
-                                <span>
-                                        <span>John Smith</span>
-                                        <span class="time">3 mins ago</span>
-                                    </span>
-                                <span class="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where...
-                                    </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="hvr-bounce-to-right">
-                                    <span class="image">
-                                        <img src="${app}/images/profile.jpg" alt="Profile Image" />
-                                    </span>
-                                <span>
-                                        <span>John Smith</span>
-                                        <span class="time">3 mins ago</span>
-                                    </span>
-                                <span class="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where...
-                                    </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="hvr-bounce-to-right">
-                                    <span class="image">
-                                        <img src="${app}/images/profile.jpg" alt="Profile Image" />
-                                    </span>
-                                <span>
-                                        <span>John Smith</span>
-                                        <span class="time">3 mins ago</span>
-                                    </span>
-                                <span class="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where...
-                                    </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="hvr-bounce-to-right">
-                                    <span class="image">
-                                        <img src="${app}/images/profile.jpg" alt="Profile Image" />
-                                    </span>
-                                <span>
-                                        <span>John Smith</span>
-                                        <span class="time">3 mins ago</span>
-                                    </span>
-                                <span class="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where...
-                                    </span>
-                            </a>
-                        </li>
-                        <li class='top-nav-li-see-all-alerts'>
-                            <div class="text-center">
-                                <a href="inbox.html">
-                                    <strong>See All Alerts</strong>
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
 
                 <li class="dropdown">
                     <a href="javascript:void(0);" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        <img src="${app}/images/profile.jpg" alt="image">John Doe
+                        <img src="${app}/images/profile.jpg" alt="image">管理员
                         <span class=" fa fa-angle-down"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-usermenu animated fadeInUp pull-right">
-                        <li>
-                            <a href="app-pages/page-profile-dashboard.html" class="hvr-bounce-to-right">  Profile</a>
-                        </li>
-                        <li>
-                            <a href="app-pages/page-profile-settings.html" class="hvr-bounce-to-right">
-                                <span class="badge bg-red pull-right">50%</span>
-                                <span>Settings</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" class="hvr-bounce-to-right">Help</a>
-                        </li>
-                        <li><a href="app-pages/page-login-2.html" class="hvr-bounce-to-right"><i class=" icon-login pull-right"></i> Log Out</a>
+                        <li><a href="${app}/administrator/logout" class="hvr-bounce-to-right"><i class=" icon-login pull-right"></i> 退出登录</a>
                         </li>
                     </ul>
                 </li>
@@ -290,10 +157,7 @@
                             <p class="text-right profile-options"><span class="profile-options-close pe-7s-close fa-2x font-bold"></span></p>
 
                             <div class="profile-options-list animated zoomIn">
-                                <p><a href="app-pages/page-profile-dashboard.html">Profile</a></p>
-                                <p><a href="app-pages/page-profile-settings.html">Settings</a></p>
-                                <p><a href="javascript:void(0)">Help</a></p>
-                                <p><a href="app-pages/page-login-2.html">Log Out</a></p>
+                                <p><a href="${app}/administrator/logout">退出登录</a></p>
                             </div>
 
                         </div>
@@ -305,7 +169,7 @@
                                 <span class="status"><i class="fa fa-circle text-success"></i></span>
                             </p>
                             <p>
-                                <span class="name">John Doe</span><br>
+                                <span class="name">管理员</span><br>
                                 <span class="position" style="font-family: monospace;">Administrator</span>
                             </p>
                         </div>
@@ -330,8 +194,6 @@
                             </li>
                             <li><a href="${app}/teacher/addForm" target="mainF">教师信息添加</a>
                             </li>
-                            <li><a href='ui-admin/hover-ideas.html'>还要什么</a>
-                            </li>
                         </ul>
                     </li>
                     <li class='sub-menu '><a href="1" class="hvr-bounce-to-right-sidebar-parent"><span class='icon-sidebar pe-7s-note fa-2x'></span><span>课程信息</span></a>
@@ -339,8 +201,6 @@
                             <li><a href="${app}/course/list" target="mainF">课程信息查询</a>
                             </li>
                             <li><a href="${app}/course/addForm" target="mainF">课程信息添加</a>
-                            </li>
-                            <li><a href='fonts/font-simple-line-icons.html'>还要什么</a>
                             </li>
                         </ul>
                     </li>
@@ -356,6 +216,14 @@
                             </li>
                         </ul>
                     </li>
+                    <li class='sub-menu '><a href="1" class="hvr-bounce-to-right-sidebar-parent"><span class='icon-sidebar pe-7s-display2 fa-2x'></span><span>管理员信息</span></a>
+                        <ul class='sub'>
+                            <li><a href="${app}/administrator/list" target="mainF">管理员信息查询</a>
+                            </li>
+                            <li><a href="${app}/teacher/addForm" target="mainF">教师信息添加</a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <!-- sidebar menu end-->
@@ -364,9 +232,7 @@
 
     <section id="main-content">
 
-
         <section class="wrapper">
-
 
             <!--======== Grid Menu Start ========-->
             <div id="grid-menu">
@@ -387,7 +253,7 @@
             <div class="top-page-header">
 
                 <div class="page-title">
-                    <h2>上海海洋大学教务信息系统</h2>
+                    <h3>欢迎使用上海海洋大学教务信息系统</h3>
                     <small>Your admin dashboard.</small>
                 </div>
 
@@ -408,362 +274,7 @@
 
 
     <!--===== Right sidebar nofications start ========-->
-    <aside>
-        <div id="right-sidebar" class="right-sidebar-notifcations nav-collapse hide-right-bar-notifications">
-            <div class="bs-example bs-example-tabs right-sidebar-tab-notification" data-example-id="togglable-tabs">
-                <ul id="right-sidebar-tabs" class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active">
-                        <a href="#activities" id="activities-tab" role="tab" data-toggle="tab" aria-controls="activities" aria-expanded="true">Activities</a>
-                    </li>
-                    <li role="presentation">
-                        <a href="#tasks" role="tab" id="tasks-tab" data-toggle="tab" aria-controls="tasks">Tasks</a>
-                    </li>
-                    <li role="presentation">
-                        <a href="#settings" role="tab" id="settings-tab" data-toggle="tab" aria-controls="settings">Settings</a>
-                    </li>
 
-                </ul>
-                <div id="right-sidebar-tab-content" class="tab-content">
-                    <div role="tabpanel" class="tab-pane fade in active" id="activities" aria-labelledBy="activities-tab">
-                        <div class="right-sidebar-panel-content-heading">
-                            <h4><span class="icon-user"></span> Latest user activities</h4>
-                            <small>10 Latest Activities</small>
-                        </div>
-                        <div class="right-sidebar-panel-content animated fadeInRight">
-
-                            <ul class="right-sidebar-list">
-                                <li>
-                                    <div class="pull-left thumbnail-hover">
-                                        <div class="overflow-hidden">
-                                            <img src="${app}/images/profile.jpg" width="80" alt="image" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h5>John Doe - User Login...</h5>
-                                        <p>Accessing the system...</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="pull-left thumbnail-hover">
-                                        <div class="overflow-hidden">
-                                            <img src="${app}/images/users/img3.jpg" width="80" alt="image"/>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h5>John Doe - Updating...</h5>
-                                        <p>Updating user ID 1 ...</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="pull-left thumbnail-hover">
-                                        <div class="overflow-hidden">
-                                            <img src="${app}/images/users/img2.jpg" width="80" alt="image"/>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h5>John Doe - Deleting...</h5>
-                                        <p>Deleting user message...</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="pull-left thumbnail-hover">
-                                        <div class="overflow-hidden">
-                                            <img src="${app}/images/users/img5.jpg" width="80" alt="image"/>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h5>John Doe - Accessing...</h5>
-                                        <p>User accessing the sys...</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="pull-left thumbnail-hover">
-                                        <div class="overflow-hidden">
-                                            <img src="${app}/images/profile.jpg" width="80" alt="image"/>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h5>John Doe - Viewing...</h5>
-                                        <p>Viewing the user...</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="pull-left thumbnail-hover">
-                                        <div class="overflow-hidden">
-                                            <img src="${app}/images/profile.jpg" width="80" alt="image"/>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h5>John Doe - Reading...</h5>
-                                        <p>Reading user message...</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="pull-left thumbnail-hover">
-                                        <div class="overflow-hidden">
-                                            <img src="${app}/images/profile.jpg" width="80" alt="image"/>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h5>John Doe - Registering...</h5>
-                                        <p>Registering new user...</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="pull-left thumbnail-hover">
-                                        <div class="overflow-hidden">
-                                            <img src="${app}/images/profile.jpg" width="80" alt="image"/>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h5>John Doe - Registering...</h5>
-                                        <p>Registering new user...</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="pull-left thumbnail-hover">
-                                        <div class="overflow-hidden">
-                                            <img src="${app}/images/profile.jpg" width="80" alt="image"/>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h5>John Doe - Registering...</h5>
-                                        <p>Registering new user...</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="pull-left thumbnail-hover">
-                                        <div class="overflow-hidden">
-                                            <img src="${app}/images/profile.jpg" width="80" alt="image"/>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h5>John Doe - Registering...</h5>
-                                        <p>Registering new user...</p>
-                                    </div>
-                                </li>
-
-                            </ul>
-
-                        </div>
-                    </div>
-                    <div role="tabpanel" class="tab-pane fade" id="tasks" aria-labelledBy="tasks-tab">
-                        <div class="right-sidebar-panel-content-heading">
-                            <h4><span class="icon-list"></span> Recent tasks</h4>
-                            <small>15 Ongoing tasks</small>
-                        </div>
-                        <div class="right-sidebar-panel-content animated fadeInRight">
-
-                            <ul class="right-sidebar-list">
-                                <li>
-                                    <div class="pull-left thumbnail-hover">
-                                        <div class="overflow-hidden">
-                                            <img src="${app}/images/profile.jpg" width="80" alt="image"/>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h5><a href="#">John Doe - Creating Tasks</a></h5>
-                                        <p>To update the sidebar...</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="pull-left thumbnail-hover">
-                                        <div class="overflow-hidden">
-                                            <img src="${app}/images/users/img2.jpg" width="80" alt="image"/>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h5>John Doe - Updating Tasks</h5>
-                                        <p>To update the header UI...</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="pull-left thumbnail-hover">
-                                        <div class="overflow-hidden">
-                                            <img src="${app}/images/users/img3.jpg" width="80" alt="image"/>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h5>John Doe - Deleting Tasks</h5>
-                                        <p>Change the content UI...</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="pull-left thumbnail-hover">
-                                        <div class="overflow-hidden">
-                                            <img src="${app}/images/users/img4.jpg" width="80" alt="image"/>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h5>John Doe - Updating Tasks</h5>
-                                        <p>To update the header UI...</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="pull-left thumbnail-hover">
-                                        <div class="overflow-hidden">
-                                            <img src="${app}/images/users/img5.jpg" width="80" alt="image"/>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h5>John Doe - Deleting Tasks</h5>
-                                        <p>Change the content UI...</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="pull-left thumbnail-hover">
-                                        <div class="overflow-hidden">
-                                            <img src="${app}/images/users/img4.jpg" width="80" alt="image"/>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h5>John Doe - Updating Tasks</h5>
-                                        <p>To update the header UI...</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="pull-left thumbnail-hover">
-                                        <div class="overflow-hidden">
-                                            <img src="${app}/images/profile.jpg" width="80" alt="image"/>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h5>John Doe - Deleting Tasks</h5>
-                                        <p>Change the content UI...</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="pull-left thumbnail-hover">
-                                        <div class="overflow-hidden">
-                                            <img src="${app}/images/profile.jpg" width="80" alt="image"/>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h5>John Doe - Updating Tasks</h5>
-                                        <p>To update the header UI...</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="pull-left thumbnail-hover">
-                                        <div class="overflow-hidden">
-                                            <img src="${app}/images/profile.jpg" width="80" alt="image"/>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h5>John Doe - Deleting Tasks</h5>
-                                        <p>Change the content UI...</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="pull-left thumbnail-hover">
-                                        <div class="overflow-hidden">
-                                            <img src="${app}/images/profile.jpg" width="80" alt="image"/>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h5>John Doe - Updating Tasks</h5>
-                                        <p>To update the header UI...</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="pull-left thumbnail-hover">
-                                        <div class="overflow-hidden">
-                                            <img src="${app}/images/profile.jpg" width="80" alt="image"/>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h5>John Doe - Deleting Tasks</h5>
-                                        <p>Change the content UI...</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="pull-left thumbnail-hover">
-                                        <div class="overflow-hidden">
-                                            <img src="${app}/images/profile.jpg" width="80" alt="image"/>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h5>John Doe - Updating Tasks</h5>
-                                        <p>To update the header UI...</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="pull-left thumbnail-hover">
-                                        <div class="overflow-hidden">
-                                            <img src="${app}/images/profile.jpg" width="80" alt="image"/>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h5>John Doe - Deleting Tasks</h5>
-                                        <p>Change the content UI...</p>
-                                    </div>
-                                </li>
-
-                            </ul>
-
-                        </div>
-                    </div>
-                    <div role="tabpanel" class="tab-pane fade" id="settings" aria-labelledBy="settings-tab">
-                        <div class="right-sidebar-panel-content-heading">
-                            <h4><span class="icon-list"></span> System Settins</h4>
-                            <small>80% Completed Settings</small>
-                        </div>
-                        <div class="right-sidebar-panel-content animated fadeInRight">
-                            <ul class="right-sidebar-list">
-                                <li>
-                                    <label class="switch-input success">
-                                        <input type="checkbox" name="switch-checkbox" checked="">
-                                        <i data-on="YES" data-off="NO"></i> Email Notifications
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="switch-input success">
-                                        <input type="checkbox" name="switch-checkbox">
-                                        <i data-on="YES" data-off="NO"></i> Daily Email Notifiactions
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="switch-input success">
-                                        <input type="checkbox" name="switch-checkbox" checked="">
-                                        <i data-on="YES" data-off="NO"></i> Show user visitors
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="switch-input success">
-                                        <input type="checkbox" name="switch-checkbox" checked="">
-                                        <i data-on="YES" data-off="NO"></i> Show birthdate
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="switch-input success">
-                                        <input type="checkbox" name="switch-checkbox">
-                                        <i data-on="YES" data-off="NO"></i> Show address
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="switch-input success">
-                                        <input type="checkbox" name="switch-checkbox">
-                                        <i data-on="YES" data-off="NO"></i> Payment Recurring
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="switch-input success">
-                                        <input type="checkbox" name="switch-checkbox">
-                                        <i data-on="YES" data-off="NO"></i> SMS Notifications
-                                    </label>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- /example -->
-            <div class="btn-bottom-right-sidebar-close">
-                <span class="fa fa-times"></span>
-            </div>
-
-        </div>
-    </aside>
-    <!--===== Right sidebar nofications end ========-->
 
 </section><!--/.container-->
 

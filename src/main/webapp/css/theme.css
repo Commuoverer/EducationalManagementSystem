@@ -499,7 +499,7 @@ ul.sidebar-menu li.sidebar-profile .image img {
 
 ul.sidebar-menu li.sidebar-profile .status {
 	margin-top: -10px;
-	font-size: 7;
+	font-size: 7px;
     margin-left: -9px;
 }
 
@@ -795,7 +795,7 @@ RIGHT SIDEBAR SECTION
 
     #right-sidebar ul.sidebar-menu li.sidebar-profile .status {
         margin-top: -10px;
-        font-size: 7;
+        font-size: 7px;
     }
 
     #right-sidebar ul.sidebar-menu li.sidebar-profile .status small i {
@@ -903,7 +903,7 @@ body.full-content-fixed-header .wrapper {
 .brand {
     background:#ffffff;
     float:left;
-    width:240px;
+    width:300px;
     height:60px;
     position:relative;
     border-bottom: 1px solid #F5EFF5;
@@ -925,10 +925,10 @@ body.full-content-unfixed-header .brand {
 }
 
 a.logo {
-    font-size:21px;
+    font-size:20px;
     color:#738699;
     float:left;
-    margin:16px 0 0 25px;
+    margin:10px 0 0 18px;
     text-transform:uppercase;
 }
 a.logo:hover,a.logo:focus {
@@ -2583,6 +2583,7 @@ PANEL DANGER TOP BORDERED COLOR SECTION
     width: 100%;
     float: left;
     clear: both;
+    font-size: 15px;
 }
 
 
@@ -4531,7 +4532,7 @@ RIGHT SIDEBAR SECTION
 
     #right-sidebar ul.sidebar-menu li.sidebar-profile .status {
         margin-top: -10px;
-        font-size: 7;
+        font-size: 7px;
     }
 
     #right-sidebar ul.sidebar-menu li.sidebar-profile .status small i {
@@ -5550,7 +5551,7 @@ ACCORDION SECTIONS
         line-height: 22px;
 
         /* rotate "play" icon from > (right arrow) to down arrow */
-        -webkit-transform: rotate(-270deg)
+        -webkit-transform: rotate(-270deg);
         -moz-transform:    rotate(-270deg);
         -ms-transform:     rotate(-270deg);
         -o-transform:      rotate(-270deg);
@@ -14772,7 +14773,7 @@ VIDEOJS SECTION
       top: 0;
       left: 0;
       height: 0.5em;
-      background: #b40c1e url() -50% 0 repeat;
+      background: #b40c1e -50% 0 repeat;
     }
     .vjs-default-skin .vjs-volume-bar .vjs-volume-handle {
       width: 0.5em;
@@ -14846,7 +14847,7 @@ VIDEOJS SECTION
         Also using a paralax effect to make the lines move backwards.
           The -50% left position makes that happen.
       */
-      background: #b40c1e url() -50% 0 repeat;
+      background: #b40c1e -50% 0 repeat;
     }
     .vjs-default-skin .vjs-load-progress {
       background: #757575;
@@ -15558,7 +15559,7 @@ HOVER IDEAS SECTION
     .hover-ideas figure.effect-lily img {
         max-width: none;
         width: -webkit-calc(100% + 50px);
-        width: calc( + 50px);
+        width: calc(50px);
         opacity: 0.7;
         -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
         transition: opacity 0.35s, transform 0.35s;
