@@ -109,7 +109,7 @@
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="client-name" name="tname" placeholder="请输入姓名">
                             </div>
-                            <div id="tnameTips" class="col-sm-2 control-label" data-color="red"></div>
+                            <div id="tnameTips" class="col-sm-2 control-label"></div>
                         </div>
                         <div class="form-group">
                             <label for="client-name1" class="col-sm-2 control-label">学 位</label>
@@ -125,7 +125,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-info btn-flat">Submit</button>
+                                <button type="submit" id="submit1" class="btn btn-info btn-flat">Submit</button>
                             </div>
                         </div>
                     </form>
@@ -137,18 +137,30 @@
             <script  type="text/javascript" src="${app}/js/jquery.js"></script>
             <script type="text/javascript">
                 $(function (){
+                    var sta=false;
                     $("#client-name").keyup(function () {
+
                         $.get(
                             "${app}/teacher/userExist?tname="+$("#client-name").val(),
                             function (result) {
                                 if(result=="yes"){
                                     $("#tnameTips").text("用户已存在");
+                                    $("#submit1").addClass("disabled");
+                                    sta=false;
                                 }else {
-                                    $("#tnameTips").text("可用用户名");
+                                    $("#tnameTips").text(" ");
+                                    $("#submit1").removeClass("disabled");
+                                    sta=true;
                                 }
                             }
                         );
                     });
+                    $("#submit1").click(function () {
+                        if (sta){
+                            return true;
+                        }
+                        else {return false;}
+                    })
                 });
             </script>
             <!-- 重名检测 -->

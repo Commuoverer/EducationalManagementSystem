@@ -85,20 +85,6 @@ public class StudentController {
         return "/admin";
     }
 
-//    @ResponseBody
-//    @RequestMapping(value = "/StudentExist")
-//    public String StudentExist(@RequestParam(value = "Studentname")String Studentname){
-//        Student Student = StudentService.findOneByStudentname(Studentname);
-//        if(Student !=null && Student.getStudentname().equals(Studentname)){//表示该用户存在
-//            return "yes";
-//        } else{
-//            return "no";
-//        }
-//    }
-
-    /**
-     * 登录检查
-     */
     @RequestMapping(value = "/studentLoginCheck")
     public ModelAndView loginCheck(Student student, HttpSession httpSession) {
         //将前端送入的多个字段封装为Student对象传递给service调用,返回的是数据库中的oneByStudent对象
@@ -125,5 +111,17 @@ public class StudentController {
         httpSession.invalidate();//使session失效
         //退出登录后,将页面重新定向到login
         return "redirect:/student/login";
+    }
+
+    @ResponseBody
+    @RequestMapping (value = "/userExist")
+    public String userExist(@RequestParam(value = "sname")String sname){
+        System.out.println("************************");
+        Student student=studentService.findBysname(sname);
+        if(student!=null&&student.getSname().equals(sname)){
+            return "yes";
+        }else {
+            return "no";
+        }
     }
 }

@@ -22,7 +22,7 @@
     <select id="findOneByStudent" resultType="com.shhy.domain.Student" parameterType="com.shhy.domain.Student">
         select * from student where sid=#{sid} and password=#{password}
     </select>
-<!--    <select id="findOneByUsername" resultType="com.shhy.domain.User" parameterType="String">-->
-<!--        select * from USER where username=#{username}-->
-<!--    </select>-->
+    <select id="findBysname" resultType="com.shhy.domain.Student" parameterType="String">
+        select * from student where sname=#{sname}
+    </select>
 </mapper>

@@ -13,7 +13,6 @@ public interface CourseMapper {
     Integer update(Course course);//更新一条记录  update user set username=xxxx,password=xxxxx,id=xxxx where id=xxx
 
     List<CourseAndTeacher> findAll(CourseAndTeacher courseAndTeacher);//查询所有课程记录
-
-
+    Course findBycid(Integer cid);
 
 }

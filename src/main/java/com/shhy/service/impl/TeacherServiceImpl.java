@@ -20,7 +20,11 @@ public class TeacherServiceImpl implements TeacherService {
 
     @Override
     public Integer insert(Teacher teacher) {
-        return teacherMapper.insert(teacher);
+        Teacher bytname = teacherMapper.findBytname(teacher.getTname());
+        if(bytname==null) {
+            return teacherMapper.insert(teacher);
+        }
+        return 0;
     }
 
     @Override
