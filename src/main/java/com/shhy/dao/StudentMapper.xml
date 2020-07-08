@@ -5,7 +5,7 @@
 
 <mapper namespace="com.shhy.dao.StudentMapper">
     <insert id="insert" parameterType="com.shhy.domain.Student">
-       insert into student (sname,password,sex,age,grade,sdepartment,specailty) values (#{sname},#{password},#{sex},#{age},#{grade},#{sdepartment},#{specialty})
+       insert into student (sname,password,sex,age,grade,sdepartment,specialty) values (#{sname},#{password},#{sex},#{age},#{grade},#{sdepartment},#{specialty})
     </insert>
     <delete id="delete" parameterType="int">
         delete from student where sid=#{sid}

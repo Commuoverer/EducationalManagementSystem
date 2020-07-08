@@ -1,12 +1,14 @@
 package com.shhy.domain;
 
-public class ScoreTC {
-   private Integer sid;
-   private String  sname;
-   private String  grade;
-   private Integer cid;
-   private String  cname;
-   private byte score;
+public class ScoreSCT {
+    private Integer sid;
+    private String sname;
+    private String grade;
+    private String sdepartment;
+    private Integer cid;
+    private String cname;
+    private String tname;
+    private byte score;
 
     public Integer getSid() {
         return sid;
@@ -20,12 +22,20 @@ public class ScoreTC {
         return grade;
     }
 
+    public String getSdepartment() {
+        return sdepartment;
+    }
+
     public Integer getCid() {
         return cid;
     }
 
     public String getCname() {
         return cname;
+    }
+
+    public String getTname() {
+        return tname;
     }
 
     public byte getScore() {
@@ -44,6 +54,10 @@ public class ScoreTC {
         this.grade = grade;
     }
 
+    public void setSdepartment(String sdepartment) {
+        this.sdepartment = sdepartment;
+    }
+
     public void setCid(Integer cid) {
         this.cid = cid;
     }
@@ -52,18 +66,24 @@ public class ScoreTC {
         this.cname = cname;
     }
 
+    public void setTname(String tname) {
+        this.tname = tname;
+    }
+
     public void setScore(byte score) {
         this.score = score;
     }
 
     @Override
     public String toString() {
-        return "ScoreTC{" +
+        return "ScoreSCT{" +
                 "sid=" + sid +
                 ", sname='" + sname + '\'' +
                 ", grade='" + grade + '\'' +
+                ", sdepartment='" + sdepartment + '\'' +
                 ", cid=" + cid +
                 ", cname='" + cname + '\'' +
+                ", tname='" + tname + '\'' +
                 ", score=" + score +
                 '}';
     }

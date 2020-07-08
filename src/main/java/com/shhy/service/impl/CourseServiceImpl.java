@@ -37,13 +37,11 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public List<CourseAndTeacher> findAll() {
-        return courseMapper.findAll();
+    public List<CourseAndTeacher> findAll(CourseAndTeacher courseAndTeacher) {
+        return courseMapper.findAll(courseAndTeacher);
     }
 
-    @Override
-    public CourseAndTeacher findOne(String cnaem) {
 
-        return courseMapper.findOne(cnaem);
-    }
+
+
 }

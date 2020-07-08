@@ -2,5 +2,13 @@
   <profile version="1.0">
     <option name="myName" value="Project Default" />
     <inspection_tool class="AndroidLintByteOrderMark" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="InnerClassMayBeStatic" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignorableAnnotations">
+        <set>
+          <option value="org.junit.jupiter.api.Nested" />
+          <option value="org.springframework.web.bind.annotation.RequestMapping" />
+        </set>
+      </option>
+    </inspection_tool>
   </profile>
 </component>

@@ -344,11 +344,11 @@
                             </li>
                         </ul>
                     </li>
-                    <li class='sub-menu '><a href="1" class="hvr-bounce-to-right-sidebar-parent"><span class='icon-sidebar pe-7s-box1 fa-2x'></span><span>Data Tables</span></a>
+                    <li class='sub-menu '><a href="1" class="hvr-bounce-to-right-sidebar-parent"><span class='icon-sidebar pe-7s-box1 fa-2x'></span><span>成绩信息</span></a>
                         <ul class='sub'>
-                            <li><a href='data-tables/basic-table.html'>Basic Table</a>
+                            <li><a href='${app}/score/addForm'>成绩录入</a>
                             </li>
-                            <li><a href='data-tables/responsive-table.html'>Responsive Table</a>
+                            <li><a href='${app}/score/list'>成绩查询</a>
                             </li>
                             <li><a href='data-tables/dynamic-table.html'>Dynamic Table</a>
                             </li>

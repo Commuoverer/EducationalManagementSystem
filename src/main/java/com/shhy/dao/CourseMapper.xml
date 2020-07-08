@@ -5,7 +5,7 @@
 
 <mapper namespace="com.shhy.dao.CourseMapper">
     <insert id="insert" parameterType="com.shhy.domain.Course">
-       insert into course (cname,tid,location,ctime) values (#{cname},#{tid},#{location},#{ctime})
+       insert into course (cid,cname,tid,location,ctime) values (#{cid},#{cname},#{tid},#{location},#{ctime})
     </insert>
     <delete id="delete" parameterType="int">
         delete from course where cid=#{cid}
@@ -14,26 +14,50 @@
         update course set cname=#{cname},tid=#{tid},location=#{location},ctime=#{ctime} where cid=#{cid}
     </update>
 
-    <select id="findOne" parameterType="String" resultMap="CourseFindOneBean">
-        select course.*,teacher.password,teacher.tname,teacher.title,teacher.tdepartment from course,teacher where  course.tid=teacher.tid and cname=#{cname}
-    </select>
+<!--    <select id="findOne" parameterType="String" resultMap="CourseFindOneBean">-->
+<!--        select course.*,teacher.password,teacher.tname,teacher.title,teacher.tdepartment from course,teacher-->
+<!--        <where>-->
+<!--        <if test="">-->
 
-    <resultMap id="CourseFindOneBean" type="com.shhy.domain.CourseAndTeacher">
-        <id property="cid" column="cid"></id>
-        <result property="cname" column="cname"></result>
-        <result property="location" column="location"></result>
-        <result property="ctime" column="ctime"></result>
-        <association property="teacher" javaType="com.shhy.domain.Teacher">
-            <id property="tid" column="tid"></id>
-            <result property="tname" column="tname"></result>
-            <result property="title" column="title"></result>
-            <result property="tdepartment" column="tdepartment"></result>
-            <result property="password" column="password"></result>
-        </association>
-    </resultMap>
+<!--        </if>-->
+<!--        </where>-->
 
-    <select id="findAll" resultMap="CourseFindAllBean">
-         select course.*,teacher.password,teacher.tname,teacher.title,teacher.tdepartment from course,teacher where  course.tid=teacher.tid
+<!--        course.tid=teacher.tid and cname=#{cname}-->
+<!--    </select>-->
+
+<!--    <resultMap id="CourseFindOneBean" type="com.shhy.domain.CourseAndTeacher">-->
+<!--        <id property="cid" column="cid"></id>-->
+<!--        <result property="cname" column="cname"></result>-->
+<!--        <result property="location" column="location"></result>-->
+<!--        <result property="ctime" column="ctime"></result>-->
+<!--        <association property="teacher" javaType="com.shhy.domain.Teacher">-->
+<!--            <id property="tid" column="tid"></id>-->
+<!--            <result property="tname" column="tname"></result>-->
+<!--            <result property="title" column="title"></result>-->
+<!--            <result property="tdepartment" column="tdepartment"></result>-->
+<!--            <result property="password" column="password"></result>-->
+<!--        </association>-->
+<!--    </resultMap>-->
+
+    <select id="findAll" parameterType="com.shhy.domain.CourseAndTeacher" resultMap="CourseFindAllBean">
+         select course.*,teacher.password,teacher.tname,teacher.title,teacher.tdepartment from course,teacher
+         <where>
+             <if test="cid!=null and cid!=''">
+                 course.cid=#{cid}
+             </if>
+             <if test="cname!=null and cname!=''">
+                 and course.cname like concat('%','${cname}','%')
+             </if>
+             <if test="teacher!=null and teacher.tid!=null">
+                 and course.tid=#{teacher.tid}
+             </if>
+             <if test="teacher!=null and teacher.tname!=null">
+                 and teacher.tname=#{teacher.tname}
+             </if>
+             <if test="true">
+                 and course.tid=teacher.tid
+             </if>
+         </where>
     </select>
     <resultMap id="CourseFindAllBean" type="com.shhy.domain.CourseAndTeacher">
         <id property="cid" column="cid"></id>
