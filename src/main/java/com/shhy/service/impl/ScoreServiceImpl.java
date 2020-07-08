@@ -23,9 +23,10 @@ public class ScoreServiceImpl implements ScoreService {
         return scoreMapper.insert(score);
     }
 
+
     @Override
-    public Integer delete(Score score) {
-        return scoreMapper.delete(score);
+    public Integer delete(Integer cid,Integer sid) {
+        return scoreMapper.delete(cid, sid);
     }
 
     @Override

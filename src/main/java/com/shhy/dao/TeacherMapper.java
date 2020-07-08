@@ -13,5 +13,5 @@ public interface TeacherMapper {
     List<Teacher> findAll();
     Teacher findOne(Integer tid);
     Teacher findoneByteacher(Teacher teacher);
-
+    Teacher findBytname(String tname);
 }

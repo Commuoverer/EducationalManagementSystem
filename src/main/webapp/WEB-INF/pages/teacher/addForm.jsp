@@ -109,6 +109,7 @@
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="client-name" name="tname" placeholder="请输入姓名">
                             </div>
+                            <div id="tnameTips" class="col-sm-2 control-label" data-color="red"></div>
                         </div>
                         <div class="form-group">
                             <label for="client-name1" class="col-sm-2 control-label">学 位</label>
@@ -133,7 +134,24 @@
 
             </div><!--/.c_panels-->
             <!--======== END BUG TRACKER FORM ========-->
-
+            <script  type="text/javascript" src="${app}/js/jquery.js"></script>
+            <script type="text/javascript">
+                $(function (){
+                    $("#client-name").keyup(function () {
+                        $.get(
+                            "${app}/teacher/userExist?tname="+$("#client-name").val(),
+                            function (result) {
+                                if(result=="yes"){
+                                    $("#tnameTips").text("用户已存在");
+                                }else {
+                                    $("#tnameTips").text("可用用户名");
+                                }
+                            }
+                        );
+                    });
+                });
+            </script>
+            <!-- 重名检测 -->
 
         </section>
     </section>

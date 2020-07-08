@@ -8,17 +8,17 @@
        insert into score (sid,score,cid) values (#{sid},#{score},#{cid})
     </insert>
 
-    <delete id="delete" parameterType="com.shhy.domain.Score">
+    <delete id="delete" parameterType="int">
         delete from score
         <where>
-            <if test="score.cid!=null and score.cid!=''">
+            <if test="cid!=null and sid==null">
                 cid=#{cid}
             </if>
-            <if test="score.sid!=null and score.sid!=''">
-                and sid=#{sid}
+            <if test="cid==null and sid!=null">
+                sid=#{sid}
             </if>
-            <if test="score.cid!=null and score.sid!=null">
-                and cid=#{cid} and sid=#{sid}
+            <if test="cid!=null and sid!=null">
+                cid=#{cid} and sid=#{sid}
             </if>
         </where>
     </delete>

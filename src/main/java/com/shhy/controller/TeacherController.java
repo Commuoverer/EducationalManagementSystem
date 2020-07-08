@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
@@ -94,5 +95,17 @@ public class TeacherController {
         httpSession.invalidate();//使session失效
         //退出登录后,将页面重新定向到login
         return "redirect:/teacher/login";
+    }
+
+     @ResponseBody
+     @RequestMapping (value = "/userExist")
+    public String userExist(@RequestParam(value = "tname")String tname){
+        System.out.println("************************");
+        Teacher teacher=teacherService.findBytname(tname);
+        if(teacher!=null&&teacher.getTname().equals(tname)){
+             return "yes";
+        }else {
+            return "no";
+        }
     }
 }
