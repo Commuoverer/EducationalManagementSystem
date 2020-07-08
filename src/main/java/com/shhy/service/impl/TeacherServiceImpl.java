@@ -47,4 +47,9 @@ public class TeacherServiceImpl implements TeacherService {
     public Teacher findoneByteacher(Teacher teacher) {
         return teacherMapper.findoneByteacher(teacher);
     }
+
+    @Override
+    public Teacher findBytname(String tname) {
+        return teacherMapper.findBytname(tname);
+    }
 }

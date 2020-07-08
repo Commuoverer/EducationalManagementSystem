@@ -11,4 +11,5 @@ public interface TeacherService {
     List<Teacher> findAll();//查找所有记录   select * from user
     Teacher findOne(Integer id);
     Teacher findoneByteacher(Teacher teacher);
+    Teacher findBytname(String tname);
 }

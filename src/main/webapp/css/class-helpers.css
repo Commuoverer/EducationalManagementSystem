@@ -261,7 +261,7 @@ Content
 }
 
 .bg-primary button.close {
-  border-color: none;
+  border-color: white;
 }
 
 .bg-primary:hover,
@@ -4132,7 +4132,6 @@ h3.heading-xs {
 /* Grayscale image
 ------------------------------------*/
 .img-grayscale {
-  filter: gray; /* IE6-9 */
   filter: grayscale(1); /* Firefox 35+ */
   -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
 }
@@ -6092,7 +6091,6 @@ h3.heading-xs {
 
 
  /******* Un margnins ************/
- //Un margin left
 
 .un-margin-left-1{
   margin-left:-1px;
@@ -6396,8 +6394,6 @@ h3.heading-xs {
 }
 
 
-//Un margin right
-
 .un-margin-right-1{
   margin-right:-1px;
 }
@@ -6700,8 +6696,6 @@ h3.heading-xs {
 }
 
 
-//Un margin top
-
 .un-margin-top-1{
   margin-top:-1px;
 }
@@ -7003,8 +6997,6 @@ h3.heading-xs {
   margin-top:-100px;
 }
 
-
-//Un margin bottom
 
 .un-margin-bottom-1{
   margin-bottom:-1px;

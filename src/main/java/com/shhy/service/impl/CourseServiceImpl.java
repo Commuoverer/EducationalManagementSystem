@@ -1,6 +1,7 @@
 package com.shhy.service.impl;
 
 import com.shhy.dao.CourseMapper;
+import com.shhy.dao.ScoreMapper;
 import com.shhy.domain.Course;
 import com.shhy.domain.CourseAndTeacher;
 import com.shhy.service.CourseService;
@@ -21,6 +22,10 @@ public class CourseServiceImpl implements CourseService {
 
     @Autowired
     private CourseMapper courseMapper;
+
+    @Autowired
+    private ScoreMapper scoreMapper;
+
     @Override
     public Integer insert(Course course) {
         return courseMapper.insert(course);
@@ -28,6 +33,7 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public Integer delete(Integer cid) {
+        scoreMapper.delete(cid,null);
         return courseMapper.delete(cid);
     }
 

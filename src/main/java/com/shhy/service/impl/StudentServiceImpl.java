@@ -1,6 +1,10 @@
 package com.shhy.service.impl;
 
+import com.shhy.dao.CourseMapper;
+import com.shhy.dao.ScoreMapper;
 import com.shhy.dao.StudentMapper;
+import com.shhy.domain.Course;
+import com.shhy.domain.Score;
 import com.shhy.domain.Student;
 import com.shhy.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +20,9 @@ public class StudentServiceImpl implements StudentService {
     @Autowired
     private StudentMapper studentMapper;
 
+    @Autowired
+    private ScoreMapper scoreMapper;
+
     @Override
     public Integer insert(Student student) {
         return studentMapper.insert(student);
@@ -23,6 +30,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Integer delete(Integer id) {
+        scoreMapper.delete(null,id);
         return studentMapper.delete(id);
     }
 

@@ -22,4 +22,8 @@
     <select id="findoneByteacher" resultType="com.shhy.domain.Teacher" parameterType="com.shhy.domain.Teacher">
         select * from teacher where tid=#{tid} and password=#{password}
     </select>
+    <select id="findBytname" resultType="com.shhy.domain.Teacher" parameterType="String">
+        select * from teacher where tname=#{tname}
+    </select>
+
 </mapper>

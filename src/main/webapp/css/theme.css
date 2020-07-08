@@ -195,8 +195,12 @@ h3.degrees:after {
     padding-left: 13px;
 }
 
+.col-md-121{
+    margin-left: 20%;
+}
+
 .c_panel, .widget-content {
-    margin-bottom: 20px !important;
+    margin-bottom: 5px !important;
 }
 
 /* ============================================================

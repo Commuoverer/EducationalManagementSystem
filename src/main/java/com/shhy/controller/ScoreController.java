@@ -60,7 +60,7 @@ public class ScoreController {
 
     @RequestMapping(value = "/delete")
     public ModelAndView delete(Score score) {
-        Integer i = scoreService.delete(score);
+        Integer i = scoreService.delete(score.getCid(),score.getSid());
         ModelAndView modelAndView = new ModelAndView("redirect:list");
         return modelAndView;
     }
