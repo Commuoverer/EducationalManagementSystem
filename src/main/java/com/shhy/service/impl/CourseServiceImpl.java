@@ -42,8 +42,8 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public CourseAndTeacher findOne(String cnaem) {
+    public Course findOne(Integer cid) {
 
-        return courseMapper.findOne(cnaem);
+        return courseMapper.findOne(cid);
     }
 }

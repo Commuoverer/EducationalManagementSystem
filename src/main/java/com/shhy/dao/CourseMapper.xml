@@ -5,7 +5,7 @@
 
 <mapper namespace="com.shhy.dao.CourseMapper">
     <insert id="insert" parameterType="com.shhy.domain.Course">
-       insert into course (cname,tid,location,ctime) values (#{cname},#{tid},#{location},#{ctime})
+       insert into course (cid,cname,tid,location,ctime) values (#{cid},#{cname},#{tid},#{location},#{ctime})
     </insert>
     <delete id="delete" parameterType="int">
         delete from course where cid=#{cid}
@@ -13,9 +13,10 @@
     <update id="update" parameterType="com.shhy.domain.Course">
         update course set cname=#{cname},tid=#{tid},location=#{location},ctime=#{ctime} where cid=#{cid}
     </update>
-
+<!--
     <select id="findOne" parameterType="String" resultMap="CourseFindOneBean">
-        select course.*,teacher.password,teacher.tname,teacher.title,teacher.tdepartment from course,teacher where  course.tid=teacher.tid and cname=#{cname}
+        select course.*,teacher.password,teacher.tname,teacher.title,teacher.tdepartment from course,teacher
+        where  course.tid=teacher.tid and cname=#{cname}
     </select>
 
     <resultMap id="CourseFindOneBean" type="com.shhy.domain.CourseAndTeacher">
@@ -31,9 +32,10 @@
             <result property="password" column="password"></result>
         </association>
     </resultMap>
-
+-->
     <select id="findAll" resultMap="CourseFindAllBean">
-         select course.*,teacher.password,teacher.tname,teacher.title,teacher.tdepartment from course,teacher where  course.tid=teacher.tid
+         select course.*,teacher.password,teacher.tname,teacher.title,teacher.tdepartment from course,teacher
+         where  course.tid=teacher.tid
     </select>
     <resultMap id="CourseFindAllBean" type="com.shhy.domain.CourseAndTeacher">
         <id property="cid" column="cid"></id>
@@ -49,7 +51,9 @@
         </association>
     </resultMap>
 
-
+<select id="findOne" resultType="com.shhy.domain.Course">
+    select * from course where cid=#{cid}
+</select>
 
 
     <!--    <select id="findOneByUser" resultType="com.shhy.domain.User" parameterType="com.shhy.domain.User">-->

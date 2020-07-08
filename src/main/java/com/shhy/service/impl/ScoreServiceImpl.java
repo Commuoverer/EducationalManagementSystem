@@ -5,6 +5,7 @@ import com.shhy.dao.ScoreMapper;
 import com.shhy.domain.Score;
 import com.shhy.domain.ScoreSC;
 import com.shhy.domain.ScoreTC;
+import com.shhy.domain.ScoreandStudent;
 import com.shhy.service.ScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,8 +23,8 @@ public class ScoreServiceImpl implements ScoreService {
     }
 
     @Override
-    public Integer delete(Integer sid, Integer cid) {
-        return scoreMapper.delete(sid, cid);
+    public Integer delete(Score score) {
+        return scoreMapper.delete(score);
     }
 
     @Override
@@ -33,6 +34,7 @@ public class ScoreServiceImpl implements ScoreService {
 
     @Override
     public List<ScoreSC> studentFindAllScore(Integer sid) {
+        System.out.println("service层");
         return scoreMapper.studentFindAllScore(sid);
     }
 
