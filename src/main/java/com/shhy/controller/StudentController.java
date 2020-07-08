@@ -130,9 +130,19 @@ public class StudentController {
     @ResponseBody
     @RequestMapping (value = "/userExist")
     public String userExist(@RequestParam(value = "sname")String sname){
-        System.out.println("************************");
         Student student=studentService.findBysname(sname);
         if(student!=null&&student.getSname().equals(sname)){
+            return "yes";
+        }else {
+            return "no";
+        }
+    }
+    @ResponseBody
+    @RequestMapping (value = "/userExistsid")
+    public String userExistsid(@RequestParam(value = "sid")Integer sid){
+        System.out.println("************************");
+        Student student=studentService.findOne(sid);
+        if(student!=null&&student.getSid().equals(sid)){
             return "yes";
         }else {
             return "no";

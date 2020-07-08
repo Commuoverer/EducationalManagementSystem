@@ -169,7 +169,7 @@
                             <td>${scoreSCT.tname}</td>
                             <td>${scoreSCT.score}</td>
                             <td><a href="${app}/score/findOne?cid=${scoreSCT.cid}&sid=${scoreSCT.sid}" class="btn btn-warning"><i class="fa fa-edit"></i> 成绩修改 </a></td>
-                            <td><a href="${app}/score/delete?cid=${scoreSCT.cid}" class="btn btn-danger"><i class="fa fa-trash-o"></i> 删除 </a></td>
+                            <td><a href="${app}/score/deletesc?cid=${scoreSCT.cid}&sid=${scoreSCT.sid}" class="btn btn-danger"><i class="fa fa-trash-o"></i> 删除 </a></td>
                         </tr>
                     </c:forEach>
                     </tbody>
