@@ -120,6 +120,5 @@
     </div>
     <br class="clear" />
 </div>
-<a href="${app}/administrator/admin">admin界面</a>
 </body>
 </html>

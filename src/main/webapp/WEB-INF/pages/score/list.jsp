@@ -79,92 +79,131 @@
 <body id="default-scheme" class="theme-sidebar-2">
 
 <section id="container">
+    <div class="col-md-12">
+        <div class="c_panel">
+            <div class="c_content">
+                <form>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="control-label">课程分数查询</label>
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control margin-top-5" name="sid" placeholder="学号">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control margin-top-5" name="cname" placeholder="课程名">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control margin-top-5" name="tname" placeholder="教师名">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control margin-top-5" list="ehobbyList" name="grade" value="${scoreSCT.grade}"
+                                               placeholder="年级"/>
+                                        <datalist id="ehobbyList">
+                                            <option value="2016级">2016级</option>
+                                            <option value="2017级">2017级</option>
+                                            <option value="2018级">2018级</option>
+                                            <option value="2019级">2019级</option>
+                                        </datalist>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control margin-top-5" name="sdepartment" placeholder="学院">
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-success btn-flat">搜索</button>
+                                    </div>
 
-    <section class="wrapper">
-
-
-        <!--======== START CLIENT DETAILS FORM ========-->
-        <div class="col-md-12">
-            <div class="c_panel">
-                <div class="c_title">
-                    <h2>课程分数</h2>
-                    <ul class="nav navbar-right panel_options">
-                        <li>
-                            <a class="full-screen">
-                                <span class="icon-size-fullscreen"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="collapse-link">
-                                <i class="fa fa-chevron-up"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                </div><!--/.c_title-->
-
-                <div class="c_content" style="font-size: 15px">
-
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>学号</th>
-                            <th>姓名</th>
-                            <th>年级</th>
-                            <th>专业</th>
-                            <th>课程</th>
-                            <th>教师</th>
-                            <th>分数</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <c:forEach items="${pageinfo.list}" var="scoreSCT" varStatus="status">
-                            <tr>
-                                <th>${scoreSCT.sid}</th>
-                                <td>${scoreSCT.sname}</td>
-                                <td>${scoreSCT.grade}</td>
-                                <td>${scoreSCT.sdepartment}</td>
-                                <td>${scoreSCT.cname}</td>
-                                <td>${scoreSCT.tname}</td>
-                                <td>${scoreSCT.score}</td>
-                                <td><a href="${app}/course/findOne?cid=${scoreSCT.cid}" class="btn btn-warning"><i class="fa fa-edit"></i> 修改 </a></td>
-                                <td><a href="${app}/course/delete?cid=${scoreSCT.cid}" class="btn btn-danger"><i class="fa fa-trash-o"></i> 删除 </a></td>
-                            </tr>
-                        </c:forEach>
-                        </tbody>
-                    </table>
-                    <table>
-                        <div class="row">
-                            <div class="col-md-8 col-xs-12">
-                                <ul class="pagination">
-                                    <li <c:if test="${pageinfo.isFirstPage}">class="disabled" </c:if> >
-                                        <a href="${app}/score/list?page=1">首页</a>
-                                    </li>
-                                    <li <c:if test="${not pageinfo.hasPreviousPage}">class="disabled" </c:if> >
-                                        <a href="${app}/score/list?page=${pageinfo.pageNum-1}">上一页</a>
-                                    </li>
-                                    <c:forEach begin="${pageinfo.navigateFirstPage}" end="${pageinfo.navigateLastPage}" var="i">
-                                        <li <c:if test="${pageinfo.pageNum == i}"> class="active" </c:if>>
-                                            <a href="${app}/score/list?page=${i}">${i}</a></li>
-                                    </c:forEach>
-                                    <li <c:if test="${not pageinfo.hasNextPage}">class="disabled" </c:if> >
-                                        <a href="${app}/score/list?page=${pageinfo.pageNum+1}">下一页</a>
-                                    </li>
-                                    <li>
-                                        <a href="${app}/score/list?page=${pageinfo.pages}">尾页</a>
-                                    </li>
-                                </ul>
+                                </div>
                             </div>
                         </div>
-                    </table>
+                    </div>
+                </form>
+            </div><!--/.c_content-->
+        </div><!--/.c_panels-->
+    </div>
+    <!--======== START CLIENT DETAILS FORM ========-->
+    <div class="col-md-12">
+        <div class="c_panel">
+            <div class="c_title">
+                <h2>课程分数</h2>
+                <ul class="nav navbar-right panel_options">
+                    <li>
+                        <a class="full-screen">
+                            <span class="icon-size-fullscreen"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div><!--/.c_title-->
 
-                </div><!--/.c_content-->
+            <div class="c_content" style="font-size: 15px">
 
-            </div><!--/.c_panels-->
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>学号</th>
+                        <th>姓名</th>
+                        <th>年级</th>
+                        <th>学院</th>
+                        <th>课程</th>
+                        <th>教师</th>
+                        <th>分数</th>
+                        <th>修改</th>
+                        <th>删除</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${pageinfo.list}" var="scoreSCT" varStatus="status">
+                        <tr>
+                            <th>${scoreSCT.sid}</th>
+                            <td>${scoreSCT.sname}</td>
+                            <td>${scoreSCT.grade}</td>
+                            <td>${scoreSCT.sdepartment}</td>
+                            <td>${scoreSCT.cname}</td>
+                            <td>${scoreSCT.tname}</td>
+                            <td>${scoreSCT.score}</td>
+                            <td><a href="${app}/course/findOne?cid=${scoreSCT.cid}" class="btn btn-warning"><i class="fa fa-edit"></i> 修改 </a></td>
+                            <td><a href="${app}/course/delete?cid=${scoreSCT.cid}" class="btn btn-danger"><i class="fa fa-trash-o"></i> 删除 </a></td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+                <table>
+                    <div class="row">
+                        <div class="col-md-8 col-xs-12">
+                            <ul class="pagination">
+                                <li>
+                                    <a href="${app}/score/list?page=1" <c:if test="${pageinfo.isFirstPage}">class="btn disabled" </c:if>>首页</a>
+                                </li>
+                                <li <c:if test="${not pageinfo.hasPreviousPage}">class="disabled" </c:if> >
+                                    <a href="${app}/score/list?page=${pageinfo.pageNum-1}" <c:if test="${pageinfo.isFirstPage}">class="btn disabled" </c:if>>上一页</a>
+                                </li>
+                                <c:forEach begin="${pageinfo.navigateFirstPage}" end="${pageinfo.navigateLastPage}" var="i">
+                                    <li <c:if test="${pageinfo.pageNum == i}"> class="active" </c:if>>
+                                        <a href="${app}/score/list?page=${i}">${i}</a></li>
+                                </c:forEach>
+                                <li <c:if test="${not pageinfo.hasNextPage}">class="disabled" </c:if> >
+                                    <a href="${app}/score/list?page=${pageinfo.pageNum+1}" <c:if test="${pageinfo.isLastPage}">class="btn disabled" </c:if>>下一页</a>
+                                </li>
+                                <li>
+                                    <a href="${app}/score/list?page=${pageinfo.pages}" <c:if test="${pageinfo.isLastPage}">class="btn disabled" </c:if>>尾页</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </table>
 
-        </div><!--/col-md-6-->
-        <!--======== END BUG TRACKER FORM ========-->
-    </section>
+            </div><!--/.c_content-->
+
+        </div><!--/.c_panels-->
+
+    </div><!--/col-md-6-->
 
 </section><!--/.container-->
 

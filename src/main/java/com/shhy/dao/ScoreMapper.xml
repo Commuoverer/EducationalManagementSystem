@@ -39,10 +39,10 @@
                 and cname like concat('%','${cname}','%')
             </if>
             <if test="grade!=null and grade!=''">
-                and grade=#{grade}
+                and grade like concat('%','${grade}','%')
             </if>
             <if test="tname!=null and tname!=''">
-                and tname=#{tname}
+                and tname like concat('%','${tname}','%')
             </if>
             <if test="sdepartment!=null and sdepartment!=''">
                 and sdepartment like concat('%','${sdepartment}','%')
