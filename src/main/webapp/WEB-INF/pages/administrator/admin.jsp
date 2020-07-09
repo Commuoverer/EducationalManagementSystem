@@ -222,8 +222,8 @@
                 <div class="page-title">
                     <h3>欢迎使用上海海洋大学教务信息系统</h3>
                 </div>
-
             </div>
+
             <!--======== Page Title and Breadcrumbs End ========-->
             <div class="row1">
                 <iframe name="mainF" frameborder="0" width="100%" height="600"></iframe>

@@ -96,7 +96,7 @@
                 <div class="c_content">
 
                     <form method="post" class="form-horizontal"
-                          action="${app}/administrator/update">
+                          action="${app}/administrator/update?id=${administrator.id}">
                         <div class="form-group">
                             <label class="col-sm-2 control-label">用户名 *</label>
                             <div class="col-sm-10">
