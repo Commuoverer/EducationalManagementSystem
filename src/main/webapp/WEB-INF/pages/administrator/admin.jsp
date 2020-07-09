@@ -95,7 +95,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a href="javascript:void(0);" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        <img src="${app}/images/profile.jpg" alt="image">管理员
+                        <img src="${app}/images/shou.jpg" alt="image">管理员
                         <span class=" fa fa-angle-down"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-usermenu animated fadeInUp pull-right">
@@ -139,7 +139,7 @@
                         <div class="profile-main">
                             <p class="text-right profile-options"><i class="profile-options-open icon-options-vertical fa-2x"></i></p>
                             <p class="image">
-                                <img alt="image" src="${app}/images/profile.jpg" width="80">
+                                <img alt="image" src="${app}/images/shou.jpg" width="80">
                                 <span class="status"><i class="fa fa-circle text-success"></i></span>
                             </p>
                             <p>
@@ -221,7 +221,6 @@
 
                 <div class="page-title">
                     <h3>欢迎使用上海海洋大学教务信息系统</h3>
-                    <small>Your admin dashboard.</small>
                 </div>
 
             </div>
