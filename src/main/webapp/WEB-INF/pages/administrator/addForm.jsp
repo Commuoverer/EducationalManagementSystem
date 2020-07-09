@@ -114,7 +114,7 @@
 
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" id="submit1" class="btn btn-info btn-flat">Submit</button>
+                                <button type="submit" id="submit1" class="btn btn-info btn-flat">提交</button>
                             </div>
                         </div>
                     </form>
@@ -130,7 +130,7 @@
                     $("#client-name").keyup(function () {
 
                         $.get(
-                            "${app}/teacher/userExist?tname="+$("#client-name").val(),
+                            "${app}/administrator/userExist?id="+$("#client-name").val(),
                             function (result) {
                                 if(result=="yes"){
                                     $("#tnameTips").text("用户已存在");

@@ -25,11 +25,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Integer insert(Student student) {
-        Student bysname = studentMapper.findBysname(student.getSname());
-        if(bysname==null) {
             return studentMapper.insert(student);
-        }
-        return 0;
     }
 
     @Override

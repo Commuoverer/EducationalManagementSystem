@@ -5,30 +5,30 @@ import java.io.Serializable;
 public class Administrator implements Serializable {
     private Integer id;
     private String password;
-    private  String photo;
+    private String address;
 
     public Integer getId() {
         return id;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public String getPhoto() {
-        return photo;
     }
 
     public void setId(Integer id) {
         this.id = id;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
     public void setPassword(String password) {
         this.password = password;
     }
 
-    public void setPhoto(String photo) {
-        this.photo = photo;
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     @Override
@@ -36,7 +36,7 @@ public class Administrator implements Serializable {
         return "Administrator{" +
                 "id=" + id +
                 ", password='" + password + '\'' +
-                ", photo='" + photo + '\'' +
+                ", address='" + address + '\'' +
                 '}';
     }
 }
