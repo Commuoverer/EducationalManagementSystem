@@ -73,6 +73,16 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+    <script>
+        function del() {
+            var msg = "您真的确定要删除吗？\n\n请确认！";
+            if (confirm(msg) == true) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
 </head>
 
 
@@ -154,7 +164,7 @@
                                 <td>${courseAndTeacher.ctime}</td>
                                 <td>${courseAndTeacher.teacher.tname}</td>
                                 <td><a href="${app}/course/findOne?cid=${courseAndTeacher.cid}" class="btn btn-warning"><i class="fa fa-edit"></i> 修改 </a></td>
-                                <td><a href="${app}/course/delete?cid=${courseAndTeacher.cid}" class="btn btn-danger"><i class="fa fa-trash-o"></i> 删除 </a></td>
+                                <td><a href="${app}/course/delete?cid=${courseAndTeacher.cid}" class="btn btn-danger" onclick="javascript:return del();"><i class="fa fa-trash-o"></i> 删除 </a></td>
                             </tr>
                         </c:forEach>
                         </tbody>
