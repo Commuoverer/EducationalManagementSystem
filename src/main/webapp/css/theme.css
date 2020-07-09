@@ -12925,6 +12925,15 @@ REGISTRATION 1 SECTION
         -moz-box-shadow: inset -5px 3px 194px 48px rgba(0,0,0,0.6);
         box-shadow: inset -5px 3px 194px 48px rgba(0,0,0,0.6);
     }
+.bg-overlay1 {
+        position:fixed;
+        top:0px;
+        left:0px;
+        bottom:0px;
+        right:0px;
+        background: url("../images/lol.jpg");
+    }
+
 
     .registration-login-wrapper {
         margin-top: 10%;

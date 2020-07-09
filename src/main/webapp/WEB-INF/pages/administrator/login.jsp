@@ -53,51 +53,41 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 </head>
-<body id="default-scheme" class="form-background">
+<body id="default-scheme" class="bg-overlay1">
 
 <!--main content start-->
-<div class="bg-overlay"></div>
+
 <section class="registration-login-wrapper">
 
-    <!--======== START LOGIN ========-->
-    <div class="row page-login">
+    <div class="row page-registration">
 
-        <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
+        <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
 
-            <div class="form-body bg-white padding-20">
-                <div class="row">
-                    <div class="col-md-12">
+            <div class="form-header bg-white1 padding-10 text-center">
+                <font size="7" style=" color: #fbfbfb"><strong>上海海洋大学</strong></font>
+                <h3 style="color: #fbfbfb">登录</h3>
+            </div>
 
-                        <div class="form-header bg-white padding-10 text-center">
-                            <h2>欢迎登录<strong>上海海洋大学</strong>教务信息系统</h2>
-                            <h3>登录</h3>
+            <div class="form-body bg-white1 padding-20">
+
+                <form method="post" action="${app}/administrator/adminLoginCheck">
+                    <div class="form-group">
+                        <label class="lable1" style="color: #fbfbfb">管理员账号</label>
+                        <input type="text" class="form-control1" name="id" placeholder="请输入用户名" />
+                    </div>
+                    <div class="form-group">
+                        <label class="lable1" style="color: #fbfbfb">管理员密码</label>
+                        <input type="password" class="form-control1" name="password" placeholder="请输入密码" />
+                    </div>
+                    <div class="row" >
+
+                        <div  align="center">
+                            <button type="submit" class="btn btn-green btn-raised btn-flat" > 登 录 </button>
                         </div>
+                    </div>
+                    <hr/>
+                </form>
 
-                        <form method="post" action="${app}/administrator/adminLoginCheck">
-                            <div class="inner-addon right-addon margin-bottom-15">
-                                <i class="fa fa-envelope"></i>
-                                <input type="text" class="form-control" name="id" placeholder="请输入用户名" />
-                            </div>
-                            <div class="inner-addon right-addon margin-bottom-15">
-                                <i class="fa fa-lock"></i>
-                                <input type="password" class="form-control" name="password" placeholder="请输入密码" />
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 text-center">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" class="icheck-aero"> Remember me
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 text-center">
-                                    <%--                                    <button type="submit">登 录</button>--%>
-                                    <button type="submit"  name="Signin" class="btn btn-green btn-raised btn-flat">登入Account</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div><!--/col-md-6-->
-                </div><!--/row-->
 
             </div><!--/form-body-->
 

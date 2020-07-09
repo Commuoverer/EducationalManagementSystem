@@ -86,6 +86,10 @@ Content
   background: #ffffff !important;
   color: inherit;
 }
+.bg-white1 {
+
+  color: inherit;
+}
 .bg-lime {
   background: #a4c400 !important;
   color: #ffffff !important;
