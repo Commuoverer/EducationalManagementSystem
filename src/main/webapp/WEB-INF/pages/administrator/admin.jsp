@@ -179,11 +179,10 @@
                     </li>
                     <li class='sub-menu '><a href="1" class="hvr-bounce-to-right-sidebar-parent"><span class='icon-sidebar pe-7s-box1 fa-2x'></span><span>成绩信息</span></a>
                         <ul class='sub'>
-                            <li><a href='${app}/score/addForm' target="mainF">成绩录入</a>
-                            </li>
                             <li><a href='${app}/score/list' target="mainF">成绩查询</a>
                             </li>
-
+                            <li><a href='${app}/score/addForm' target="mainF">成绩录入</a>
+                            </li>
                         </ul>
                     </li>
                     <li class='sub-menu '><a href="1" class="hvr-bounce-to-right-sidebar-parent"><span class='icon-sidebar pe-7s-portfolio fa-2x'></span><span>管理员信息</span></a>

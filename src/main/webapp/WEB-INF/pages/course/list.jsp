@@ -134,7 +134,7 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <th></th>
+                            <th>编号</th>
                             <th>课程号</th>
                             <th>课程名</th>
                             <th>上课教室</th>
@@ -147,7 +147,8 @@
                         <tbody>
                         <c:forEach items="${pageinfo.list}" var="courseAndTeacher" varStatus="status">
                             <tr>
-                                <th>${courseAndTeacher.cid}</th>
+                                <th>${status.count}</th>
+                                <td>${courseAndTeacher.cid}</td>
                                 <td>${courseAndTeacher.cname}</td>
                                 <td>${courseAndTeacher.location}</td>
                                 <td>${courseAndTeacher.ctime}</td>

@@ -147,6 +147,7 @@
                 <table class="table">
                     <thead>
                     <tr>
+                        <th>编号</th>
                         <th>学号</th>
                         <th>姓名</th>
                         <th>年级</th>
@@ -161,14 +162,15 @@
                     <tbody>
                     <c:forEach items="${pageinfo.list}" var="scoreSCT" varStatus="status">
                         <tr>
-                            <th>${scoreSCT.sid}</th>
+                            <th>${status.count}</th>
+                            <td>${scoreSCT.sid}</td>
                             <td>${scoreSCT.sname}</td>
                             <td>${scoreSCT.grade}</td>
                             <td>${scoreSCT.sdepartment}</td>
                             <td>${scoreSCT.cname}</td>
                             <td>${scoreSCT.tname}</td>
                             <td>${scoreSCT.score}</td>
-                            <td><a href="${app}/score/findOne?cid=${scoreSCT.cid}&sid=${scoreSCT.sid}" class="btn btn-warning"><i class="fa fa-edit"></i> 成绩修改 </a></td>
+                            <td><a href="${app}/score/findOne?cid=${scoreSCT.cid}&sid=${scoreSCT.sid}" class="btn btn-warning"><i class="fa fa-edit"></i> 修改 </a></td>
                             <td><a href="${app}/score/deletesc?cid=${scoreSCT.cid}&sid=${scoreSCT.sid}" class="btn btn-danger"><i class="fa fa-trash-o"></i> 删除 </a></td>
                         </tr>
                     </c:forEach>

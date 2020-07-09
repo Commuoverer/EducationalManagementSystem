@@ -112,7 +112,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="col-md-2 control-label">administrator.photo</label>
+                            <label class="col-md-2 control-label">照片</label>
                             <div class="col-md-3">
                                 <img id="userPhoto" src="${app}/${administrator.photo}"
                                      style="width: 75px;height: 75px;"/>
