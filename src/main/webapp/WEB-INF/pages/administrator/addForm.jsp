@@ -130,7 +130,7 @@
                     $("#client-name").keyup(function () {
 
                         $.get(
-                            "${app}/teacher/userExist?tname="+$("#client-name").val(),
+                            "${app}/administrator/userExist?id="+$("#client-name").val(),
                             function (result) {
                                 if(result=="yes"){
                                     $("#tnameTips").text("用户已存在");

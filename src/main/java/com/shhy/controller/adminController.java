@@ -4,12 +4,14 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.shhy.domain.Administrator;
 import com.shhy.domain.Student;
+import com.shhy.domain.Teacher;
 import com.shhy.service.adminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -138,16 +140,7 @@ public class adminController {
     public String toCourseList() {
         return "/course/list";
     }
-//    @ResponseBody
-//    @RequestMapping(value = "/StudentExist")
-//    public String StudentExist(@RequestParam(value = "Studentname")String Studentname){
-//        Student Student = StudentService.findOneByStudentname(Studentname);
-//        if(Student !=null && Student.getStudentname().equals(Studentname)){//表示该用户存在
-//            return "yes";
-//        } else{
-//            return "no";
-//        }
-//    }
+
 
     /**
      * 登录检查
@@ -174,5 +167,16 @@ public class adminController {
         httpSession.invalidate();//使session失效
         //退出登录后,将页面重新定向到login
         return "redirect:/administrator/login";
+    }
+
+    @ResponseBody
+    @RequestMapping (value = "/userExist")
+    public String userExist(@RequestParam(value = "id")Integer id){
+        Administrator administrator=adminservice.findOne(id);
+        if(administrator!=null&&administrator.getId().equals(id)){
+            return "yes";
+        }else {
+            return "no";
+        }
     }
 }
