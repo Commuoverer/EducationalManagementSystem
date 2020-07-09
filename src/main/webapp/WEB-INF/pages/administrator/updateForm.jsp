@@ -111,37 +111,37 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label class="col-md-2 control-label">照片</label>
-                            <div class="col-md-3">
-                                <img id="userPhoto" src="${app}/${administrator.photo}"
-                                     style="width: 75px;height: 75px;"/>
-                            </div>
-                            <div class="col-md-7">
-                                <div class="input-group">
-                                    <input style="display: none;" type="file" value="${administrator.photo}" name="file"
-                                           id="inputPhoto" class="form-control1" placeholder="照片">
-                                </div>
-                            </div>
-                        </div>
+<%--                        <div class="form-group">--%>
+<%--                            <label class="col-md-2 control-label">照 片*</label>--%>
+<%--                            <div class="col-md-3">--%>
+<%--                                <img id="userPhoto" src="${app}/${administrator.photo}"--%>
+<%--                                     style="width: 75px;height: 75px;"/>--%>
+<%--                            </div>--%>
+<%--                            <div class="col-md-7">--%>
+<%--                                <div class="input-group">--%>
+<%--                                    <input style="display: none;" type="file" value="${administrator.photo}" name="file"--%>
+<%--                                           id="inputPhoto" class="form-control1" placeholder="照片">--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
 
-                        <script>
-                            $(function () {
-                                $("#userPhoto").click(function () {
-                                    $("#inputPhoto").click();
-                                });
+<%--                        <script>--%>
+<%--                            $(function () {--%>
+<%--                                $("#userPhoto").click(function () {--%>
+<%--                                    $("#inputPhoto").click();--%>
+<%--                                });--%>
 
-                                $("#inputPhoto").change(function (e) {
-                                    var reader = new FileReader();
-                                    reader.onload = (function (file) {
-                                        return function (e) {
-                                            $("#userPhoto").attr("src", this.result);
-                                        };
-                                    })(e.target.files[0]);
-                                    reader.readAsDataURL(e.target.files[0]);
-                                });
-                            });
-                        </script>
+<%--                                $("#inputPhoto").change(function (e) {--%>
+<%--                                    var reader = new FileReader();--%>
+<%--                                    reader.onload = (function (file) {--%>
+<%--                                        return function (e) {--%>
+<%--                                            $("#userPhoto").attr("src", this.result);--%>
+<%--                                        };--%>
+<%--                                    })(e.target.files[0]);--%>
+<%--                                    reader.readAsDataURL(e.target.files[0]);--%>
+<%--                                });--%>
+<%--                            });--%>
+<%--                        </script>--%>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <button type="submit" class="btn btn-info btn-flat">提交</button>

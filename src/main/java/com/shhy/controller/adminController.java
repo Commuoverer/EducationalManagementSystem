@@ -66,26 +66,34 @@ public class adminController {
     }
 
     @RequestMapping(value = "/update")
-    public ModelAndView update(Administrator administrator, HttpServletRequest request, @RequestParam(value = "file")MultipartFile file) throws IOException {
-        //设置图片的存储路径
-        String path = request.getSession().getServletContext().getRealPath("/images/upload");
-        //获取图片的文件名
-        String filename = UUID.randomUUID() + "-" + file.getOriginalFilename();
-        File dir = new File(path, filename);
-        if(!dir.exists()){
-            dir.mkdirs();
-        }
-
-//        上传文件
-        file.transferTo(dir);
-        //photo名字拼接
-        String imageurl = "images/upload/" + filename;
-        administrator.setPhoto(imageurl);
-
-        ModelAndView modelAndView = new ModelAndView("redirect:/admin");
-        adminservice.update(administrator);
+    public ModelAndView update(Administrator administrator) {
+        System.out.println(administrator);
+        Integer i = adminservice.update(administrator);
+        ModelAndView modelAndView = new ModelAndView("redirect:list");
         return modelAndView;
     }
+
+//    @RequestMapping(value = "/update")
+//    public ModelAndView update(Administrator administrator, HttpServletRequest request, @RequestParam(value = "file")MultipartFile file) throws IOException {
+//        //设置图片的存储路径
+//        String path = request.getSession().getServletContext().getRealPath("/images/users");
+//        //获取图片的文件名
+//        String filename = UUID.randomUUID() + "-" + file.getOriginalFilename();
+//        File dir = new File(path, filename);
+//        if(!dir.exists()){
+//            dir.mkdirs();
+//        }
+//
+////        上传文件
+//        file.transferTo(dir);
+//        //photo名字拼接
+//        String imageurl = "images/users/" + filename;
+//        administrator.setPhoto(imageurl);
+//
+//        ModelAndView modelAndView = new ModelAndView("administrator/admin");
+//        adminservice.update(administrator);
+//        return modelAndView;
+//    }
 
 
     @RequestMapping(value = "/addForm")
