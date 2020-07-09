@@ -46,9 +46,11 @@ public class CourseController {
     {
         PageHelper.startPage(page,pageSize);
         ModelAndView modelAndView = new ModelAndView("/course/list");
+
         Teacher teacher = new Teacher();
         teacher.setTname(courseAndTeacher.getNAME());
         courseAndTeacher.setTeacher(teacher);
+
         List<CourseAndTeacher> courseAndTeachers  = courseService.findAll(courseAndTeacher);
         //创建一个PageInfo对象,用以封装查询到的数据,同时指定页码导航列表的数目
         PageInfo pageinfo = new PageInfo(courseAndTeachers,5);

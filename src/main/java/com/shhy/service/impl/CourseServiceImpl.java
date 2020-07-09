@@ -28,7 +28,7 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public Integer insert(Course course) {
-        Course bycid = courseMapper.findBycid(course.getCid());
+        Course bycid = courseMapper.findBycid(course.getCid());//检测输入课程id如果为空
         if(bycid==null){
         return courseMapper.insert(course);}
         return 0;
