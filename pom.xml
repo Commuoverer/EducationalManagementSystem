@@ -137,7 +137,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
+      <version>4.13.1</version>
       <!--        此处临时改为compile,生产流程中记得改为test-->
       <scope>compile</scope>
     </dependency>
